@@ -24,13 +24,14 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
+      isScrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-emerald-100' : 'bg-transparent'
     }`}>
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold text-slate-800">
-            Portfolio
+          <div className="text-2xl font-bold text-forest-800 group cursor-pointer">
+            <span className="group-hover:text-emerald-600 transition-colors duration-300">Rohit</span>
+            <span className="text-emerald-600 group-hover:text-forest-800 transition-colors duration-300"> Chavan</span>
           </div>
 
           {/* Desktop Navigation */}
@@ -39,7 +40,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="text-slate-700 hover:text-coral-500 transition-colors duration-200 relative story-link"
+                className="text-forest-700 hover:text-emerald-600 transition-colors duration-200 relative story-link font-medium"
               >
                 {item.label}
               </a>
@@ -49,16 +50,16 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2"
+            className="md:hidden p-2 rounded-lg hover:bg-emerald-50 transition-colors duration-200"
           >
             <div className="space-y-1">
-              <div className={`w-6 h-0.5 bg-slate-800 transition-all duration-300 ${
+              <div className={`w-6 h-0.5 bg-forest-800 transition-all duration-300 ${
                 isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
               }`}></div>
-              <div className={`w-6 h-0.5 bg-slate-800 transition-all duration-300 ${
+              <div className={`w-6 h-0.5 bg-forest-800 transition-all duration-300 ${
                 isMobileMenuOpen ? 'opacity-0' : ''
               }`}></div>
-              <div className={`w-6 h-0.5 bg-slate-800 transition-all duration-300 ${
+              <div className={`w-6 h-0.5 bg-forest-800 transition-all duration-300 ${
                 isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
               }`}></div>
             </div>
@@ -69,16 +70,18 @@ const Header = () => {
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
           isMobileMenuOpen ? 'max-h-64 pb-4' : 'max-h-0'
         }`}>
-          {navItems.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              className="block py-2 text-slate-700 hover:text-coral-500 transition-colors duration-200"
-              onClick={() => setIsMobileMenuOpen(false)}
-            >
-              {item.label}
-            </a>
-          ))}
+          <div className="bg-white/90 backdrop-blur-sm rounded-lg border border-emerald-100 p-4 space-y-2">
+            {navItems.map((item) => (
+              <a
+                key={item.label}
+                href={item.href}
+                className="block py-2 px-4 text-forest-700 hover:text-emerald-600 hover:bg-emerald-50 rounded-lg transition-all duration-200 font-medium"
+                onClick={() => setIsMobileMenuOpen(false)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
         </div>
       </nav>
     </header>
