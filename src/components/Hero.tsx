@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ChevronDown, Download, Mail, Linkedin, Github } from 'lucide-react';
+import { ChevronDown, Download, Mail, Linkedin, Github, Code, Database, BarChart3 } from 'lucide-react';
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
@@ -15,6 +15,12 @@ const Hero = () => {
     { delay: '4s', duration: '7s', size: 'w-20 h-8', color: 'sage-300', position: 'bottom-32 left-1/4' },
     { delay: '1s', duration: '9s', size: 'w-8 h-8', color: 'forest-400', position: 'top-1/3 right-20' },
     { delay: '3s', duration: '5s', size: 'w-14 h-14', color: 'emerald-200', position: 'bottom-48 right-1/3' },
+  ];
+
+  const skills = [
+    { icon: Code, name: 'Python', level: 90 },
+    { icon: Database, name: 'Data Analysis', level: 85 },
+    { icon: BarChart3, name: 'Machine Learning', level: 80 }
   ];
 
   return (
@@ -115,10 +121,35 @@ const Hero = () => {
               {/* Main image container */}
               <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-emerald-100">
                 <img
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+                  src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
                   alt="Rohit P. Chavan - Data Science Student"
                   className="w-full h-96 object-cover rounded-2xl"
                 />
+                
+                {/* Skills Progress Bars - Filling the blank space */}
+                <div className="mt-6 space-y-4">
+                  <h4 className="text-lg font-semibold text-forest-800 mb-4">Core Skills</h4>
+                  {skills.map((skill, index) => (
+                    <div key={skill.name} className="animate-fade-in" style={{ animationDelay: `${2 + index * 0.2}s` }}>
+                      <div className="flex items-center justify-between mb-2">
+                        <div className="flex items-center gap-2">
+                          <skill.icon className="w-4 h-4 text-emerald-600" />
+                          <span className="text-sm font-medium text-forest-700">{skill.name}</span>
+                        </div>
+                        <span className="text-sm text-forest-600">{skill.level}%</span>
+                      </div>
+                      <div className="w-full bg-sage-200 rounded-full h-2">
+                        <div 
+                          className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                          style={{ 
+                            width: mounted ? `${skill.level}%` : '0%',
+                            animationDelay: `${2 + index * 0.2}s`
+                          }}
+                        ></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
                 
                 {/* Floating skill badges */}
                 <div className="absolute -top-4 -right-4 bg-emerald-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce" style={{ animationDelay: '2s' }}>
