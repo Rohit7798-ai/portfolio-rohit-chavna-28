@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { ChevronDown, Download, Mail, Linkedin, Github, Code, Database, BarChart3 } from 'lucide-react';
+import { ChevronDown, Download, Mail, Linkedin, Github, Code, Database, BarChart3, Users, TrendingUp, Award } from 'lucide-react';
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
@@ -18,9 +18,15 @@ const Hero = () => {
   ];
 
   const skills = [
-    { icon: Code, name: 'Python', level: 90 },
-    { icon: Database, name: 'Data Analysis', level: 85 },
-    { icon: BarChart3, name: 'Machine Learning', level: 80 }
+    { icon: Code, name: 'Python', level: 95, logo: '🐍' },
+    { icon: Database, name: 'Data Analysis', level: 90, logo: '📊' },
+    { icon: BarChart3, name: 'Machine Learning', level: 80, logo: '🤖' }
+  ];
+
+  const achievements = [
+    { icon: TrendingUp, number: '3+', label: 'Active Projects', description: 'Dashboard Solutions' },
+    { icon: Users, number: '97%', label: 'Accuracy Rate', description: 'ML Models' },
+    { icon: Award, number: '2', label: 'Certifications', description: 'Python & IT' }
   ];
 
   return (
@@ -65,29 +71,30 @@ const Hero = () => {
               BSc Data Science Student
             </p>
             
+            {/* Enhanced Tagline */}
+            <p className="text-lg md:text-xl text-emerald-600 font-semibold mb-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
+              "Solving real-world problems with code and creativity"
+            </p>
+            
             <p className="text-lg text-forest-600 mb-8 max-w-2xl animate-fade-in" style={{ animationDelay: '0.9s' }}>
               Passionate about transforming data into actionable insights using Python, machine learning, and statistical modeling. 
               Building innovative solutions with AI and data visualization.
             </p>
 
-            {/* Quick Stats */}
-            <div className="grid grid-cols-3 gap-6 mb-8 animate-fade-in" style={{ animationDelay: '1.2s' }}>
-              <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-emerald-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <div className="text-2xl font-bold text-emerald-600">Python</div>
-                <div className="text-sm text-forest-600">Programming</div>
-              </div>
-              <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-emerald-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <div className="text-2xl font-bold text-teal-600">AI/ML</div>
-                <div className="text-sm text-forest-600">Research</div>
-              </div>
-              <div className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-emerald-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105">
-                <div className="text-2xl font-bold text-forest-600">Data</div>
-                <div className="text-sm text-forest-600">Visualization</div>
-              </div>
+            {/* Achievement Stats */}
+            <div className="grid grid-cols-3 gap-4 mb-8 animate-fade-in" style={{ animationDelay: '1.1s' }}>
+              {achievements.map((achievement, index) => (
+                <div key={index} className="text-center p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-emerald-100 hover:shadow-lg transition-all duration-300 transform hover:scale-105 group">
+                  <achievement.icon className="w-6 h-6 text-emerald-600 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
+                  <div className="text-2xl font-bold text-emerald-600">{achievement.number}</div>
+                  <div className="text-sm font-medium text-forest-700">{achievement.label}</div>
+                  <div className="text-xs text-forest-500">{achievement.description}</div>
+                </div>
+              ))}
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8 animate-fade-in" style={{ animationDelay: '1.5s' }}>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-6 animate-fade-in" style={{ animationDelay: '1.3s' }}>
               <button className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg">
                 View My Projects
                 <ChevronDown className="w-5 h-5" />
@@ -98,49 +105,63 @@ const Hero = () => {
               </button>
             </div>
             
-            {/* Social Links */}
-            <div className="flex justify-center lg:justify-start gap-4 animate-fade-in" style={{ animationDelay: '1.8s' }}>
-              <a href="mailto:chavanrohit2213@gmail.com" className="p-3 bg-white/70 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-emerald-600 hover:bg-emerald-50 transition-all duration-300 transform hover:scale-110">
-                <Mail className="w-5 h-5" />
+            {/* Social Links - More Prominent */}
+            <div className="flex justify-center lg:justify-start gap-4 mb-4 animate-fade-in" style={{ animationDelay: '1.5s' }}>
+              <a href="mailto:chavanrohit2213@gmail.com" className="p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-emerald-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                <Mail className="w-6 h-6" />
               </a>
-              <a href="https://linkedin.com/in/rohit-chavan" className="p-3 bg-white/70 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-emerald-600 hover:bg-emerald-50 transition-all duration-300 transform hover:scale-110">
-                <Linkedin className="w-5 h-5" />
+              <a href="https://linkedin.com/in/rohit-chavan" className="p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                <Linkedin className="w-6 h-6" />
               </a>
-              <a href="https://github.com/RohitTips" className="p-3 bg-white/70 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-emerald-600 hover:bg-emerald-50 transition-all duration-300 transform hover:scale-110">
-                <Github className="w-5 h-5" />
+              <a href="https://github.com/RohitTips" className="p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                <Github className="w-6 h-6" />
               </a>
+            </div>
+            
+            {/* Social Labels */}
+            <div className="flex justify-center lg:justify-start gap-4 text-xs text-forest-500 animate-fade-in" style={{ animationDelay: '1.6s' }}>
+              <span>Email</span>
+              <span>LinkedIn</span>
+              <span>GitHub</span>
             </div>
           </div>
 
           {/* Hero Image/Illustration */}
           <div className={`relative transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`} style={{ animationDelay: '0.5s' }}>
             <div className="relative group">
-              {/* Floating backdrop */}
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 via-teal-400 to-sage-400 rounded-full blur-3xl opacity-30 group-hover:opacity-40 transition-opacity duration-500 animate-pulse"></div>
+              {/* Enhanced backdrop with blur */}
+              <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 via-teal-400 to-sage-400 rounded-full blur-3xl opacity-40 group-hover:opacity-50 transition-opacity duration-500 animate-pulse"></div>
+              <div className="absolute inset-4 bg-gradient-to-r from-emerald-200 to-teal-200 rounded-3xl blur-2xl opacity-30 animate-pulse" style={{ animationDelay: '1s' }}></div>
               
               {/* Main image container */}
-              <div className="relative bg-white/80 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-emerald-100">
+              <div className="relative bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-emerald-100 group-hover:shadow-3xl transition-all duration-500">
                 <img
                   src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
                   alt="Rohit P. Chavan - Data Science Student"
-                  className="w-full h-96 object-cover rounded-2xl"
+                  className="w-full h-96 object-cover rounded-2xl shadow-lg"
                 />
                 
-                {/* Skills Progress Bars - Filling the blank space */}
+                {/* Enhanced Skills Progress Bars */}
                 <div className="mt-6 space-y-4">
-                  <h4 className="text-lg font-semibold text-forest-800 mb-4">Core Skills</h4>
+                  <h4 className="text-lg font-semibold text-forest-800 mb-4 flex items-center gap-2">
+                    <span className="text-emerald-600">🎯</span>
+                    Core Skills
+                  </h4>
                   {skills.map((skill, index) => (
-                    <div key={skill.name} className="animate-fade-in" style={{ animationDelay: `${2 + index * 0.2}s` }}>
+                    <div key={skill.name} className="animate-fade-in group/skill" style={{ animationDelay: `${2 + index * 0.2}s` }}>
                       <div className="flex items-center justify-between mb-2">
-                        <div className="flex items-center gap-2">
-                          <skill.icon className="w-4 h-4 text-emerald-600" />
-                          <span className="text-sm font-medium text-forest-700">{skill.name}</span>
+                        <div className="flex items-center gap-3">
+                          <span className="text-lg">{skill.logo}</span>
+                          <div className="flex items-center gap-2">
+                            <skill.icon className="w-4 h-4 text-emerald-600" />
+                            <span className="text-sm font-medium text-forest-700">{skill.name}</span>
+                          </div>
                         </div>
-                        <span className="text-sm text-forest-600">{skill.level}%</span>
+                        <span className="text-sm font-bold text-emerald-600">{skill.level}%</span>
                       </div>
-                      <div className="w-full bg-sage-200 rounded-full h-2">
+                      <div className="w-full bg-sage-200 rounded-full h-3 overflow-hidden">
                         <div 
-                          className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out"
+                          className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full transition-all duration-1000 ease-out group-hover/skill:shadow-lg"
                           style={{ 
                             width: mounted ? `${skill.level}%` : '0%',
                             animationDelay: `${2 + index * 0.2}s`
@@ -151,15 +172,24 @@ const Hero = () => {
                   ))}
                 </div>
                 
-                {/* Floating skill badges */}
-                <div className="absolute -top-4 -right-4 bg-emerald-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce" style={{ animationDelay: '2s' }}>
-                  🐍 Python Expert
+                {/* Enhanced Floating skill badges */}
+                <div className="absolute -top-6 -right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-xl shadow-xl animate-bounce transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: '2s' }}>
+                  <div className="flex items-center gap-2">
+                    <span>🐍</span>
+                    <span className="font-semibold">Python Expert</span>
+                  </div>
                 </div>
-                <div className="absolute -bottom-4 -left-4 bg-teal-500 text-white px-4 py-2 rounded-lg shadow-lg animate-bounce" style={{ animationDelay: '3s' }}>
-                  📊 Data Analyst
+                <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-2 rounded-xl shadow-xl animate-bounce transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: '3s' }}>
+                  <div className="flex items-center gap-2">
+                    <span>📊</span>
+                    <span className="font-semibold">Data Analyst</span>
+                  </div>
                 </div>
-                <div className="absolute top-1/2 -right-8 bg-forest-600 text-white px-3 py-2 rounded-lg shadow-lg animate-pulse">
-                  🤖 AI/ML
+                <div className="absolute top-1/2 -right-10 bg-gradient-to-r from-forest-600 to-emerald-600 text-white px-3 py-2 rounded-xl shadow-xl animate-pulse transform hover:scale-105 transition-transform duration-300">
+                  <div className="flex items-center gap-1">
+                    <span>🤖</span>
+                    <span className="font-semibold text-sm">AI/ML</span>
+                  </div>
                 </div>
               </div>
             </div>
