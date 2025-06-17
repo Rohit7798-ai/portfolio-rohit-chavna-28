@@ -3,6 +3,8 @@ import React from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
+import TechStack from '../components/TechStack';
+import StatsGlance from '../components/StatsGlance';
 import Portfolio from '../components/Portfolio';
 import Testimonials from '../components/Testimonials';
 import Blog from '../components/Blog';
@@ -16,6 +18,8 @@ const Index = () => {
       <Header />
       <Hero />
       <About />
+      <TechStack />
+      <StatsGlance />
       <Portfolio />
       <Testimonials />
       <Blog />

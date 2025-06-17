@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -168,6 +169,12 @@
     animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   }
 
+  /* Dynamic Typewriter Effect */
+  .typewriter-dynamic {
+    display: inline-block;
+    animation: typewriter-fade 0.5s ease-in-out;
+  }
+
   /* Enhanced Micro-interactions */
   .animate-in {
     opacity: 1 !important;
@@ -240,6 +247,11 @@
 @keyframes blink-caret {
   from, to { border-color: transparent }
   50% { border-color: #10b981; }
+}
+
+@keyframes typewriter-fade {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 @keyframes gradient-shift {

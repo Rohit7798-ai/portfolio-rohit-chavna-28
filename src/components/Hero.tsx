@@ -5,9 +5,23 @@ import AnimateOnScroll from './MicroInteractions';
 
 const Hero = () => {
   const [mounted, setMounted] = useState(false);
+  const [currentDesignation, setCurrentDesignation] = useState(0);
+  
+  const designations = [
+    "BSc Data Science Student",
+    "Problem Solver",
+    "ML Explorer",
+    "Dashboard Developer"
+  ];
 
   useEffect(() => {
     setMounted(true);
+    
+    const interval = setInterval(() => {
+      setCurrentDesignation((prev) => (prev + 1) % designations.length);
+    }, 3000);
+    
+    return () => clearInterval(interval);
   }, []);
 
   const floatingElements = [
@@ -32,8 +46,9 @@ const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-sage-50 via-emerald-50 to-teal-50">
-      {/* Animated Background Elements */}
+      {/* Floating Particles Background */}
       <div className="absolute inset-0 pointer-events-none">
+        {/* Existing floating elements */}
         {floatingElements.map((element, index) => (
           <div
             key={index}
@@ -43,6 +58,20 @@ const Hero = () => {
               animationDuration: element.duration 
             }}
           ></div>
+        ))}
+        
+        {/* Enhanced particle system */}
+        {[...Array(12)].map((_, i) => (
+          <div
+            key={`particle-${i}`}
+            className={`absolute w-2 h-2 bg-emerald-400 rounded-full opacity-30 animate-bounce`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`
+            }}
+          />
         ))}
         
         {/* Rotating geometric shapes */}
@@ -69,9 +98,10 @@ const Hero = () => {
                 </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-forest-700 mb-4 animate-fade-in" style={{ animationDelay: '0.6s' }}>
-                BSc Data Science Student
-              </p>
+              {/* Enhanced typewriter designation */}
+              <div className="text-xl md:text-2xl text-forest-700 mb-4 h-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+                <span className="typewriter-dynamic">{designations[currentDesignation]}</span>
+              </div>
               
               {/* Enhanced Tagline with typewriter effect */}
               <div className="text-lg md:text-xl text-emerald-600 font-semibold mb-4 animate-fade-in" style={{ animationDelay: '0.7s' }}>
