@@ -56,7 +56,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
+    <section id="about" className="py-16 bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
       {/* Floating 3D Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-16 h-16 bg-emerald-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
@@ -67,67 +67,67 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-forest-900 mb-4 animate-fade-in">About Rohit</h2>
-          <p className="text-xl text-forest-700 max-w-3xl mx-auto">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-forest-900 mb-3 animate-fade-in">About Rohit</h2>
+          <p className="text-xl text-forest-700 max-w-3xl mx-auto font-medium">
             BSc Data Science student with hands-on experience in Python programming, data analysis, and statistical modeling
           </p>
         </div>
 
         {/* Personal Story */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-20">
+        <div className="grid lg:grid-cols-2 gap-8 mb-16">
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-2xl blur-lg opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-xl blur-lg opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
             <img
               src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&h=800&fit=crop"
               alt="Rohit P. Chavan - Data Science Student"
-              className="relative rounded-2xl shadow-2xl w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
+              className="relative rounded-xl shadow-2xl w-full h-96 object-cover transform group-hover:scale-105 transition-transform duration-500"
             />
-            <div className="absolute -bottom-6 -right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-6 rounded-2xl shadow-xl">
-              <div className="text-2xl font-bold">BSc</div>
+            <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-xl shadow-xl">
+              <div className="text-xl font-bold">BSc</div>
               <div className="text-sm">Data Science</div>
             </div>
           </div>
           
-          <div className="space-y-6">
-            <h3 className="text-3xl font-bold text-forest-900">My Journey in Data Science</h3>
-            <p className="text-lg text-forest-700 leading-relaxed">
+          <div className="space-y-5">
+            <h3 className="text-2xl font-bold text-forest-900">My Journey in Data Science</h3>
+            <p className="text-base text-forest-700 leading-relaxed font-medium">
               Currently pursuing BSc in Data Science at R.C. Patel Arts, Commerce and Science College in Shirpur, Maharashtra. 
               I have developed strong expertise in Python programming, data analysis, and statistical modeling.
             </p>
-            <p className="text-lg text-forest-700 leading-relaxed">
+            <p className="text-base text-forest-700 leading-relaxed font-medium">
               My passion lies in solving real-world problems using AI and IT solutions. I'm a quick learner with 
               a strong work ethic, certified in both Python and Information Technology, building a robust project portfolio.
             </p>
             
             {/* Contact Info */}
-            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 space-y-2">
-              <div className="flex items-center gap-2 text-forest-700">
+            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-4 space-y-2 border border-emerald-100">
+              <div className="flex items-center gap-2 text-forest-700 font-medium">
                 <span>📧</span>
                 <span>chavanrohit2213@gmail.com</span>
               </div>
-              <div className="flex items-center gap-2 text-forest-700">
+              <div className="flex items-center gap-2 text-forest-700 font-medium">
                 <span>📱</span>
                 <span>7798319504</span>
               </div>
-              <div className="flex items-center gap-2 text-forest-700">
+              <div className="flex items-center gap-2 text-forest-700 font-medium">
                 <span>📍</span>
                 <span>Shirpur, Maharashtra, India</span>
               </div>
             </div>
             
             {/* Skills */}
-            <div className="space-y-4">
-              <h4 className="text-xl font-semibold text-forest-900">Technical Skills</h4>
+            <div className="space-y-3">
+              <h4 className="text-lg font-semibold text-forest-900">Technical Skills</h4>
               {skills.map((skill) => (
                 <div key={skill.name} className="group">
                   <div className="flex justify-between mb-1">
-                    <span className="text-sm font-medium text-forest-800">{skill.name}</span>
-                    <span className="text-sm text-forest-600">{skill.level}%</span>
+                    <span className="text-sm font-semibold text-forest-800">{skill.name}</span>
+                    <span className="text-sm text-forest-600 font-medium">{skill.level}%</span>
                   </div>
-                  <div className="w-full bg-emerald-100 rounded-full h-3 overflow-hidden">
+                  <div className="w-full bg-emerald-100 rounded-full h-2 overflow-hidden">
                     <div 
-                      className="bg-gradient-to-r from-emerald-500 to-teal-500 h-3 rounded-full transition-all duration-1000 ease-out transform group-hover:scale-105"
+                      className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out transform group-hover:scale-105"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
@@ -135,7 +135,7 @@ const About = () => {
               ))}
             </div>
             
-            <button className="bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-lg hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 flex items-center gap-2 transform hover:scale-105">
+            <button className="bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-xl hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 font-semibold">
               Download Resume
               <span>📄</span>
             </button>
@@ -143,52 +143,52 @@ const About = () => {
         </div>
 
         {/* Timeline */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-bold text-forest-900 text-center mb-12">Education & Experience Timeline</h3>
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">Education & Experience Timeline</h3>
           <div className="relative">
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-400 to-teal-400"></div>
             {timeline.map((item, index) => (
-              <div key={index} className={`flex items-center mb-8 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8 text-right' : 'pl-8'}`}>
-                  <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-                    <div className="text-emerald-600 font-bold text-lg">{item.year}</div>
-                    <h4 className="text-xl font-semibold text-forest-900 mb-1">{item.title}</h4>
-                    <div className="text-forest-600 mb-2 font-medium">{item.company}</div>
-                    <p className="text-forest-700">{item.description}</p>
+              <div key={index} className={`flex items-center mb-6 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6'}`}>
+                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+                    <div className="text-emerald-600 font-bold text-base">{item.year}</div>
+                    <h4 className="text-lg font-semibold text-forest-900 mb-1">{item.title}</h4>
+                    <div className="text-forest-600 mb-2 font-semibold text-sm">{item.company}</div>
+                    <p className="text-forest-700 text-sm font-medium">{item.description}</p>
                   </div>
                 </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full border-4 border-white shadow-lg"></div>
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full border-3 border-white shadow-lg"></div>
               </div>
             ))}
           </div>
         </div>
 
         {/* Certifications */}
-        <div className="mb-20">
-          <h3 className="text-3xl font-bold text-forest-900 text-center mb-12">Certifications</h3>
+        <div className="mb-16">
+          <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">Certifications</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <div className="text-4xl mb-4">🐍</div>
-              <h4 className="text-xl font-semibold text-forest-900 mb-2">MKCL Certified in Python</h4>
-              <p className="text-forest-700">Advanced Python programming certification covering data structures, algorithms, and application development.</p>
+            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+              <div className="text-3xl mb-3">🐍</div>
+              <h4 className="text-lg font-semibold text-forest-900 mb-2">MKCL Certified in Python</h4>
+              <p className="text-forest-700 text-sm font-medium">Advanced Python programming certification covering data structures, algorithms, and application development.</p>
             </div>
-            <div className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <div className="text-4xl mb-4">💻</div>
-              <h4 className="text-xl font-semibold text-forest-900 mb-2">MKCL Certified in Information Technology</h4>
-              <p className="text-forest-700">Comprehensive IT certification covering modern technologies and digital communication skills.</p>
+            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+              <div className="text-3xl mb-3">💻</div>
+              <h4 className="text-lg font-semibold text-forest-900 mb-2">MKCL Certified in Information Technology</h4>
+              <p className="text-forest-700 text-sm font-medium">Comprehensive IT certification covering modern technologies and digital communication skills.</p>
             </div>
           </div>
         </div>
 
         {/* Values & Approach */}
         <div>
-          <h3 className="text-3xl font-bold text-forest-900 text-center mb-12">My Approach</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">My Approach</h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
             {values.map((value, index) => (
-              <div key={index} className="bg-white/70 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-emerald-100 group">
-                <div className="text-4xl mb-4 transform group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
-                <h4 className="text-xl font-semibold text-forest-900 mb-3">{value.title}</h4>
-                <p className="text-forest-700">{value.description}</p>
+              <div key={index} className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-emerald-100 group">
+                <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
+                <h4 className="text-lg font-semibold text-forest-900 mb-2">{value.title}</h4>
+                <p className="text-forest-700 text-sm font-medium">{value.description}</p>
               </div>
             ))}
           </div>
