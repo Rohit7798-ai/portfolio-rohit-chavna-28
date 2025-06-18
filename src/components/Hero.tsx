@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react';
 import { ChevronDown, Download, Mail, Linkedin, Github, Code, Database, BarChart3, Users, TrendingUp, Award } from 'lucide-react';
 import SkillHeatmap from './SkillHeatmap';
@@ -175,11 +176,20 @@ const Hero = () => {
                 
                 {/* Main image container */}
                 <div className="relative bg-white/90 backdrop-blur-sm p-8 rounded-3xl shadow-2xl border border-emerald-100 group-hover:shadow-3xl transition-all duration-500">
-                  <img
-                    src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
-                    alt="Rohit P. Chavan - Data Science Student"
-                    className="w-full h-96 object-cover rounded-2xl shadow-lg"
-                  />
+                  {/* Circular headshot image */}
+                  <div className="w-full h-96 flex items-center justify-center mb-6">
+                    <div className="relative">
+                      <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-emerald-500 to-teal-500 shadow-2xl">
+                        <img
+                          src="/lovable-uploads/188da912-8c4c-4048-bb19-0392fcaebb97.png"
+                          alt="Rohit P. Chavan - Data Science Student"
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      {/* Decorative ring around the image */}
+                      <div className="absolute inset-0 rounded-full border-4 border-emerald-500 animate-pulse opacity-50"></div>
+                    </div>
+                  </div>
                   
                   {/* Replace skills progress bars with dynamic heatmap */}
                   <div className="mt-6">
