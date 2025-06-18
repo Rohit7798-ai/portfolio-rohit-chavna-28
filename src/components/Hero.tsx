@@ -181,7 +181,7 @@ const Hero = () => {
                     <div className="relative">
                       <div className="w-80 h-80 rounded-full overflow-hidden border-4 border-gradient-to-r from-emerald-500 to-teal-500 shadow-2xl">
                         <img
-                          src="/lovable-uploads/188da912-8c4c-4048-bb19-0392fcaebb97.png"
+                          src="/lovable-uploads/73863ed7-f2ca-44a7-a160-8926273e66fc.png"
                           alt="Rohit P. Chavan - Data Science Student"
                           className="w-full h-full object-cover"
                         />
