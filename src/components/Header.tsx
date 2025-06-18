@@ -1,16 +1,24 @@
 
 import React, { useState, useEffect } from 'react';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [currentTagline, setCurrentTagline] = useState(0);
+
+  const taglines = [
+    "Data Enthusiast",
+    "Python Developer", 
+    "ML Explorer",
+    "Problem Solver"
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      setIsScrolled(window.scrollY > 20);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -24,10 +32,17 @@ const Header = () => {
     }
   }, [isDarkMode]);
 
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTagline((prev) => (prev + 1) % taglines.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
   const navItems = [
     { label: 'Home', href: '#home' },
     { label: 'About', href: '#about' },
-    { label: 'Portfolio', href: '#portfolio' },
+    { label: 'Projects', href: '#portfolio' },
     { label: 'Blog', href: '#blog' },
     { label: 'Contact', href: '#contact' },
   ];
@@ -36,77 +51,125 @@ const Header = () => {
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
         ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-emerald-100 dark:border-emerald-800' 
-        : 'bg-transparent'
+        : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm'
     }`}>
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Gradient background divider */}
+      <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-teal-50/30 to-sage-50/50 dark:from-slate-800/30 dark:via-slate-700/20 dark:to-slate-800/30"></div>
+      
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top Level: Name + Navigation */}
         <div className="flex justify-between items-center py-4">
-          {/* Logo */}
-          <div className="text-2xl font-bold text-forest-800 dark:text-emerald-400 group cursor-pointer">
-            <span className="group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-all duration-300 transform group-hover:scale-105">
-              Rohit
-            </span>
-            <span className="text-emerald-600 dark:text-emerald-500 group-hover:text-forest-800 dark:group-hover:text-emerald-400 transition-all duration-300 transform group-hover:scale-105 ml-2">
-              Chavan
-            </span>
+          {/* Left: Name and Location */}
+          <div className="flex flex-col">
+            <div className="text-2xl lg:text-3xl font-bold text-forest-800 dark:text-emerald-400 group cursor-pointer">
+              <span className="group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-all duration-300">
+                Rohit P.
+              </span>
+              <span className="text-emerald-600 dark:text-emerald-500 group-hover:text-forest-800 dark:group-hover:text-emerald-400 transition-all duration-300 ml-2">
+                Chavan
+              </span>
+            </div>
+            
+            {/* Location Tag */}
+            <div className="mt-1">
+              <span className="inline-flex items-center bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-700/50 shadow-sm">
+                📍 Shirpur, Maharashtra, India
+              </span>
+            </div>
           </div>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+          {/* Center: Desktop Navigation */}
+          <nav className="hidden md:flex items-center space-x-8">
+            {navItems.map((item, index) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="group text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 relative story-link font-medium transform hover:scale-105"
+                className="group relative text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 font-semibold text-lg py-2"
               >
                 <span className="group-hover:animate-pulse">{item.label}</span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-300 group-hover:w-full"></span>
+                {index < navItems.length - 1 && (
+                  <span className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-emerald-300 dark:text-emerald-700">|</span>
+                )}
               </a>
             ))}
-            
-            {/* Theme Toggle */}
-            <ThemeToggle isDark={isDarkMode} onToggle={() => setIsDarkMode(!isDarkMode)} />
-          </div>
+          </nav>
 
-          {/* Mobile Menu Button */}
-          <div className="md:hidden flex items-center gap-3">
+          {/* Right: Theme Toggle + Mobile Menu */}
+          <div className="flex items-center gap-3">
             <ThemeToggle isDark={isDarkMode} onToggle={() => setIsDarkMode(!isDarkMode)} />
+            
+            {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-slate-800 transition-all duration-300 transform hover:scale-105"
+              className="md:hidden p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-slate-800 transition-all duration-300"
               aria-label="Toggle mobile menu"
             >
-              <div className="space-y-1">
-                <div className={`w-6 h-0.5 bg-forest-800 dark:bg-slate-300 transition-all duration-300 ${
-                  isMobileMenuOpen ? 'rotate-45 translate-y-1.5' : ''
-                }`}></div>
-                <div className={`w-6 h-0.5 bg-forest-800 dark:bg-slate-300 transition-all duration-300 ${
-                  isMobileMenuOpen ? 'opacity-0' : ''
-                }`}></div>
-                <div className={`w-6 h-0.5 bg-forest-800 dark:bg-slate-300 transition-all duration-300 ${
-                  isMobileMenuOpen ? '-rotate-45 -translate-y-1.5' : ''
-                }`}></div>
-              </div>
+              {isMobileMenuOpen ? (
+                <X className="w-6 h-6 text-forest-800 dark:text-slate-300" />
+              ) : (
+                <Menu className="w-6 h-6 text-forest-800 dark:text-slate-300" />
+              )}
             </button>
+          </div>
+        </div>
+
+        {/* Bottom Level: Profile Image + Dynamic Tagline */}
+        <div className="hidden lg:flex items-center justify-between pb-4 border-t border-emerald-100/50 dark:border-emerald-800/30 pt-4">
+          {/* Left: Dynamic Tagline */}
+          <div className="flex items-center space-x-4">
+            <div className="text-lg font-medium text-emerald-600 dark:text-emerald-400 typewriter-dynamic">
+              {taglines[currentTagline]}
+            </div>
+          </div>
+
+          {/* Right: Circular Profile Image */}
+          <div className="relative group">
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
+            <div className="relative w-16 h-16 rounded-full overflow-hidden border-3 border-white dark:border-slate-700 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              <img
+                src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
+                alt="Rohit P. Chavan"
+                className="w-full h-full object-cover object-center"
+              />
+            </div>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-64 pb-4' : 'max-h-0'
+          isMobileMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'
         }`}>
-          <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-lg border border-emerald-100 dark:border-emerald-800 p-4 space-y-2 shadow-lg">
+          <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl border border-emerald-100 dark:border-emerald-800 p-4 space-y-1 shadow-lg mt-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-2 px-4 text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-slate-800 rounded-lg transition-all duration-300 font-medium transform hover:scale-105"
+                className="block py-3 px-4 text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-slate-800 rounded-lg transition-all duration-300 font-semibold"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
               </a>
             ))}
+            
+            {/* Mobile Profile Section */}
+            <div className="flex items-center space-x-3 pt-3 mt-3 border-t border-emerald-100 dark:border-emerald-800">
+              <div className="relative">
+                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-200 dark:border-emerald-700 shadow-md">
+                  <img
+                    src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
+                    alt="Rohit P. Chavan"
+                    className="w-full h-full object-cover object-center"
+                  />
+                </div>
+              </div>
+              <div className="text-sm font-medium text-emerald-600 dark:text-emerald-400 typewriter-dynamic">
+                {taglines[currentTagline]}
+              </div>
+            </div>
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
