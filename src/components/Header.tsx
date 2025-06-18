@@ -57,24 +57,18 @@ const Header = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-teal-50/30 to-sage-50/50 dark:from-slate-800/30 dark:via-slate-700/20 dark:to-slate-800/30"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Level: Name + Navigation */}
+        {/* Top Level: Logo + Navigation */}
         <div className="flex justify-between items-center py-4">
-          {/* Left: Name and Location */}
-          <div className="flex flex-col">
-            <div className="text-2xl lg:text-3xl font-bold text-forest-800 dark:text-emerald-400 group cursor-pointer">
-              <span className="group-hover:text-emerald-600 dark:group-hover:text-emerald-300 transition-all duration-300">
-                Rohit P.
+          {/* Left: Minimal Logo Section */}
+          <div className="flex items-center">
+            <div className="bg-emerald-50/80 dark:bg-emerald-900/20 px-4 py-2 rounded-full border border-emerald-200/50 dark:border-emerald-700/30 shadow-sm backdrop-blur-sm">
+              <span className="text-xl lg:text-2xl font-bold text-forest-800 dark:text-emerald-300">
+                Rohit
               </span>
-              <span className="text-emerald-600 dark:text-emerald-500 group-hover:text-forest-800 dark:group-hover:text-emerald-400 transition-all duration-300 ml-2">
+              <span className="text-xl lg:text-2xl font-light text-emerald-600 dark:text-emerald-400 ml-1">
                 Chavan
               </span>
-            </div>
-            
-            {/* Location Tag */}
-            <div className="mt-1">
-              <span className="inline-flex items-center bg-emerald-100/80 dark:bg-emerald-900/30 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border border-emerald-200/50 dark:border-emerald-700/50 shadow-sm">
-                📍 Shirpur, Maharashtra, India
-              </span>
+              <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full ml-2 animate-pulse"></span>
             </div>
           </div>
 
@@ -116,8 +110,11 @@ const Header = () => {
 
         {/* Bottom Level: Profile Image + Dynamic Tagline */}
         <div className="hidden lg:flex items-center justify-between pb-4 border-t border-emerald-100/50 dark:border-emerald-800/30 pt-4">
-          {/* Left: Dynamic Tagline */}
+          {/* Left: Location Tag */}
           <div className="flex items-center space-x-4">
+            <span className="inline-flex items-center bg-emerald-100/60 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border border-emerald-200/40 dark:border-emerald-700/40 shadow-sm">
+              📍 Shirpur, Maharashtra, India
+            </span>
             <div className="text-lg font-medium text-emerald-600 dark:text-emerald-400 typewriter-dynamic">
               {taglines[currentTagline]}
             </div>
