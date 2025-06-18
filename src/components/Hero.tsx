@@ -185,26 +185,6 @@ const Hero = () => {
                   <div className="mt-6">
                     <SkillHeatmap />
                   </div>
-                  
-                  {/* Enhanced Floating skill badges */}
-                  <div className="absolute -top-6 -right-6 bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-2 rounded-xl shadow-xl animate-bounce transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: '2s' }}>
-                    <div className="flex items-center gap-2">
-                      <span>🐍</span>
-                      <span className="font-semibold">Python Expert</span>
-                    </div>
-                  </div>
-                  <div className="absolute -bottom-6 -left-6 bg-gradient-to-r from-teal-500 to-emerald-500 text-white px-4 py-2 rounded-xl shadow-xl animate-bounce transform hover:scale-105 transition-transform duration-300" style={{ animationDelay: '3s' }}>
-                    <div className="flex items-center gap-2">
-                      <span>📊</span>
-                      <span className="font-semibold">Data Analyst</span>
-                    </div>
-                  </div>
-                  <div className="absolute top-1/2 -right-10 bg-gradient-to-r from-forest-600 to-emerald-600 text-white px-3 py-2 rounded-xl shadow-xl animate-pulse transform hover:scale-105 transition-transform duration-300">
-                    <div className="flex items-center gap-1">
-                      <span>🤖</span>
-                      <span className="font-semibold text-sm">AI/ML</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
