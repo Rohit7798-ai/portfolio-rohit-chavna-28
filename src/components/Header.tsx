@@ -54,17 +54,28 @@ const Header = () => {
         <div className="relative px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between">
             
-            {/* Left: Name with subtle circular background */}
+            {/* Left: Profile Image + Name with subtle circular background */}
             <div className="relative flex items-center">
               <div className="absolute -inset-2 bg-emerald-100/40 dark:bg-emerald-900/30 rounded-full blur-sm"></div>
-              <div className="relative flex items-center space-x-1">
-                <span className="text-xl lg:text-2xl font-semibold text-slate-800 dark:text-slate-100">
-                  Rohit
-                </span>
-                <span className="text-xl lg:text-2xl font-light text-emerald-600 dark:text-emerald-400">
-                  Chavan
-                </span>
-                <div className="w-2 h-2 bg-emerald-500 rounded-full ml-2 animate-pulse"></div>
+              <div className="relative flex items-center space-x-3">
+                {/* Profile Image */}
+                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
+                  <img
+                    src="/lovable-uploads/e9409933-388b-4597-8a92-9215d717c7ab.png"
+                    alt="Rohit P. Chavan"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                {/* Name */}
+                <div className="flex items-center space-x-1">
+                  <span className="text-xl lg:text-2xl font-semibold text-slate-800 dark:text-slate-100">
+                    Rohit
+                  </span>
+                  <span className="text-xl lg:text-2xl font-light text-emerald-600 dark:text-emerald-400">
+                    Chavan
+                  </span>
+                  <div className="w-2 h-2 bg-emerald-500 rounded-full ml-2 animate-pulse"></div>
+                </div>
               </div>
             </div>
 
