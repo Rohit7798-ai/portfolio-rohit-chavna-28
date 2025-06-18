@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
@@ -65,23 +66,8 @@ const Header = () => {
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Header Level */}
         <div className="flex items-center justify-between py-4">
-          {/* Left: Circular Profile Image */}
+          {/* Left: Name in circular pill */}
           <div className="flex items-center space-x-4">
-            <div className="relative group">
-              {/* Circular glow effect */}
-              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/40 to-teal-400/40 rounded-full blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
-              
-              {/* Perfect circular profile image */}
-              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white dark:border-slate-700 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105 bg-white dark:bg-slate-800">
-                <img
-                  src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
-                  alt="Rohit P. Chavan"
-                  className="w-full h-full object-cover object-center"
-                />
-              </div>
-            </div>
-
-            {/* Name in circular pill */}
             <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm px-4 py-2 rounded-full border border-emerald-200/50 dark:border-emerald-700/30 shadow-sm">
               <span className="text-lg lg:text-xl font-bold text-forest-800 dark:text-emerald-300">
                 Rohit
