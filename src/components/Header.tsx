@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
@@ -50,22 +49,44 @@ const Header = () => {
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       isScrolled 
-        ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg border-b border-emerald-100 dark:border-emerald-800' 
+        ? 'bg-white/95 dark:bg-slate-900/95 backdrop-blur-md shadow-lg' 
         : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-sm'
     }`}>
-      {/* Gradient background divider */}
-      <div className="absolute inset-0 bg-gradient-to-r from-emerald-50/50 via-teal-50/30 to-sage-50/50 dark:from-slate-800/30 dark:via-slate-700/20 dark:to-slate-800/30"></div>
+      {/* Decorative circular background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute -top-10 -left-10 w-32 h-32 bg-emerald-100/30 dark:bg-emerald-900/20 rounded-full blur-xl"></div>
+        <div className="absolute top-5 right-20 w-20 h-20 bg-teal-100/40 dark:bg-teal-900/20 rounded-full blur-lg"></div>
+        <div className="absolute -bottom-5 right-10 w-24 h-24 bg-sage-100/20 dark:bg-sage-900/10 rounded-full blur-lg"></div>
+      </div>
+
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-r from-white/50 via-emerald-50/30 to-teal-50/20 dark:from-slate-900/50 dark:via-slate-800/30 dark:to-slate-900/20"></div>
       
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top Level: Logo + Navigation */}
-        <div className="flex justify-between items-center py-4">
-          {/* Left: Minimal Logo Section */}
-          <div className="flex items-center">
-            <div className="bg-emerald-50/80 dark:bg-emerald-900/20 px-4 py-2 rounded-full border border-emerald-200/50 dark:border-emerald-700/30 shadow-sm backdrop-blur-sm">
-              <span className="text-xl lg:text-2xl font-bold text-forest-800 dark:text-emerald-300">
+        {/* Main Header Level */}
+        <div className="flex items-center justify-between py-4">
+          {/* Left: Circular Profile Image */}
+          <div className="flex items-center space-x-4">
+            <div className="relative group">
+              {/* Circular glow effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/40 to-teal-400/40 rounded-full blur-md opacity-50 group-hover:opacity-70 transition-opacity duration-300"></div>
+              
+              {/* Perfect circular profile image */}
+              <div className="relative w-14 h-14 rounded-full overflow-hidden border-2 border-white dark:border-slate-700 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105 bg-white dark:bg-slate-800">
+                <img
+                  src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
+                  alt="Rohit P. Chavan"
+                  className="w-full h-full object-cover object-center"
+                />
+              </div>
+            </div>
+
+            {/* Name in circular pill */}
+            <div className="bg-white/60 dark:bg-slate-800/60 backdrop-blur-sm px-4 py-2 rounded-full border border-emerald-200/50 dark:border-emerald-700/30 shadow-sm">
+              <span className="text-lg lg:text-xl font-bold text-forest-800 dark:text-emerald-300">
                 Rohit
               </span>
-              <span className="text-xl lg:text-2xl font-light text-emerald-600 dark:text-emerald-400 ml-1">
+              <span className="text-lg lg:text-xl font-light text-emerald-600 dark:text-emerald-400 ml-1">
                 Chavan
               </span>
               <span className="inline-block w-2 h-2 bg-emerald-500 rounded-full ml-2 animate-pulse"></span>
@@ -75,17 +96,19 @@ const Header = () => {
           {/* Center: Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
             {navItems.map((item, index) => (
-              <a
-                key={item.label}
-                href={item.href}
-                className="group relative text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 font-semibold text-lg py-2"
-              >
-                <span className="group-hover:animate-pulse">{item.label}</span>
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-300 group-hover:w-full"></span>
+              <React.Fragment key={item.label}>
+                <a
+                  href={item.href}
+                  className="group relative text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 font-medium text-base py-2"
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
+                >
+                  <span className="group-hover:animate-pulse">{item.label}</span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-emerald-500 transition-all duration-300 group-hover:w-full rounded-full"></span>
+                </a>
                 {index < navItems.length - 1 && (
-                  <span className="absolute -right-4 top-1/2 transform -translate-y-1/2 text-emerald-300 dark:text-emerald-700">|</span>
+                  <span className="text-emerald-300 dark:text-emerald-700 text-sm">|</span>
                 )}
-              </a>
+              </React.Fragment>
             ))}
           </nav>
 
@@ -96,7 +119,7 @@ const Header = () => {
             {/* Mobile Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="md:hidden p-2 rounded-lg hover:bg-emerald-50 dark:hover:bg-slate-800 transition-all duration-300"
+              className="md:hidden p-2 rounded-full hover:bg-emerald-50 dark:hover:bg-slate-800 transition-all duration-300"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? (
@@ -108,41 +131,36 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Bottom Level: Profile Image + Dynamic Tagline */}
+        {/* Bottom Level: Location & Dynamic Tagline */}
         <div className="hidden lg:flex items-center justify-between pb-4 border-t border-emerald-100/50 dark:border-emerald-800/30 pt-4">
           {/* Left: Location Tag */}
           <div className="flex items-center space-x-4">
-            <span className="inline-flex items-center bg-emerald-100/60 dark:bg-emerald-900/20 text-emerald-800 dark:text-emerald-300 px-3 py-1 rounded-full text-xs font-medium backdrop-blur-sm border border-emerald-200/40 dark:border-emerald-700/40 shadow-sm">
+            <span className="inline-flex items-center bg-white/70 dark:bg-slate-800/70 text-emerald-800 dark:text-emerald-300 px-3 py-1.5 rounded-full text-xs font-medium backdrop-blur-sm border border-emerald-200/40 dark:border-emerald-700/40 shadow-sm">
               📍 Shirpur, Maharashtra, India
             </span>
-            <div className="text-lg font-medium text-emerald-600 dark:text-emerald-400 typewriter-dynamic">
+            <div className="text-base font-medium text-emerald-600 dark:text-emerald-400 typewriter-dynamic">
               {taglines[currentTagline]}
             </div>
           </div>
 
-          {/* Right: Circular Profile Image */}
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full blur-md opacity-30 group-hover:opacity-50 transition-opacity duration-300"></div>
-            <div className="relative w-16 h-16 rounded-full overflow-hidden border-3 border-white dark:border-slate-700 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-              <img
-                src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
-                alt="Rohit P. Chavan"
-                className="w-full h-full object-cover object-center"
-              />
-            </div>
+          {/* Right: Decorative circular element */}
+          <div className="flex items-center space-x-2">
+            <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
+            <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse delay-75"></div>
+            <div className="w-1.5 h-1.5 bg-sage-400 rounded-full animate-pulse delay-150"></div>
           </div>
         </div>
 
         {/* Mobile Menu */}
         <div className={`md:hidden transition-all duration-300 overflow-hidden ${
-          isMobileMenuOpen ? 'max-h-80 pb-4' : 'max-h-0'
+          isMobileMenuOpen ? 'max-h-96 pb-4' : 'max-h-0'
         }`}>
-          <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-sm rounded-xl border border-emerald-100 dark:border-emerald-800 p-4 space-y-1 shadow-lg mt-4">
+          <div className="bg-white/90 dark:bg-slate-900/90 backdrop-blur-md rounded-2xl border border-emerald-100 dark:border-emerald-800 p-4 space-y-1 shadow-lg mt-4">
             {navItems.map((item) => (
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-3 px-4 text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50 dark:hover:bg-slate-800 rounded-lg transition-all duration-300 font-semibold"
+                className="block py-3 px-4 text-forest-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300 font-medium"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
@@ -151,15 +169,6 @@ const Header = () => {
             
             {/* Mobile Profile Section */}
             <div className="flex items-center space-x-3 pt-3 mt-3 border-t border-emerald-100 dark:border-emerald-800">
-              <div className="relative">
-                <div className="w-12 h-12 rounded-full overflow-hidden border-2 border-emerald-200 dark:border-emerald-700 shadow-md">
-                  <img
-                    src="/lovable-uploads/7ddb1f05-1d29-492f-b854-9a20aabe55e5.png"
-                    alt="Rohit P. Chavan"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </div>
               <div className="text-sm font-medium text-emerald-600 dark:text-emerald-400 typewriter-dynamic">
                 {taglines[currentTagline]}
               </div>
