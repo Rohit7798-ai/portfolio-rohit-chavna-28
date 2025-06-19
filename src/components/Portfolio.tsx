@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { ChevronRight, ExternalLink, Github, TrendingUp, Users, Zap } from 'lucide-react';
 import AnimatedProjectCard from './AnimatedProjectCard';
@@ -71,9 +72,9 @@ const Portfolio = () => {
   ];
 
   const categories = [
-    { id: 'all', label: 'All Projects' },
+    { id: 'all', label: 'All' },
     { id: 'data-science', label: 'Data Science' },
-    { id: 'machine-learning', label: 'Machine Learning' },
+    { id: 'machine-learning', label: 'ML' },
     { id: 'analytics', label: 'Analytics' }
   ];
 
@@ -82,34 +83,34 @@ const Portfolio = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="portfolio" className="py-20 bg-gradient-to-br from-sage-50 to-emerald-50 relative overflow-hidden">
-      {/* Floating 3D Elements */}
+    <section id="portfolio" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sage-50 to-emerald-50 relative overflow-hidden">
+      {/* Floating 3D Elements - Responsive */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-32 left-20 w-24 h-24 bg-gradient-to-r from-emerald-300 to-teal-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '0s' }}></div>
-        <div className="absolute top-64 right-32 w-16 h-16 bg-sage-400 rounded-lg opacity-25 animate-bounce" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
-        <div className="absolute bottom-48 left-1/3 w-20 h-12 bg-forest-300 rounded-full opacity-30 transform rotate-12 animate-pulse" style={{ animationDelay: '1s' }}></div>
-        <div className="absolute top-1/2 right-16 w-8 h-8 bg-emerald-400 rotate-45 opacity-20 animate-spin" style={{ animationDuration: '10s' }}></div>
+        <div className="absolute top-16 sm:top-32 left-4 sm:left-20 w-12 h-12 sm:w-24 sm:h-24 bg-gradient-to-r from-emerald-300 to-teal-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '0s' }}></div>
+        <div className="absolute top-32 sm:top-64 right-8 sm:right-32 w-8 h-8 sm:w-16 sm:h-16 bg-sage-400 rounded-lg opacity-25 animate-bounce" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
+        <div className="absolute bottom-24 sm:bottom-48 left-1/3 w-10 h-6 sm:w-20 sm:h-12 bg-forest-300 rounded-full opacity-30 transform rotate-12 animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 right-4 sm:right-16 w-4 h-4 sm:w-8 sm:h-8 bg-emerald-400 rotate-45 opacity-20 animate-spin" style={{ animationDuration: '10s' }}></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <AnimateOnScroll animation="fade-in">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-forest-900 mb-4">Featured Projects</h2>
-            <p className="text-xl text-forest-700 max-w-3xl mx-auto">
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-forest-900 mb-3 sm:mb-4">Featured Projects</h2>
+            <p className="text-base sm:text-lg lg:text-xl text-forest-700 max-w-3xl mx-auto leading-relaxed">
               A showcase of data science projects demonstrating expertise in Python, statistical modeling, and machine learning
             </p>
           </div>
         </AnimateOnScroll>
 
-        {/* Enhanced Filter Buttons */}
+        {/* Enhanced Filter Buttons - Mobile Optimized */}
         <AnimateOnScroll animation="slide-up" delay={200}>
-          <div className="flex flex-wrap justify-center gap-4 mb-12">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2">
             {categories.map((category) => (
               <button
                 key={category.id}
                 onClick={() => setFilter(category.id)}
-                className={`group px-6 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 ${
+                className={`group px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 text-sm sm:text-base whitespace-nowrap ${
                   filter === category.id
                     ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
                     : 'bg-white/80 backdrop-blur-sm text-forest-700 hover:bg-emerald-100 border border-emerald-200 hover:shadow-md'
@@ -121,8 +122,8 @@ const Portfolio = () => {
           </div>
         </AnimateOnScroll>
 
-        {/* Enhanced Projects Grid with Animated Cards */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
+        {/* Enhanced Projects Grid with Animated Cards - Mobile Responsive */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
           {filteredProjects.map((project, index) => (
             <AnimateOnScroll key={project.id} animation="scale-in" delay={index * 100}>
               <AnimatedProjectCard project={project} index={index} />
@@ -133,7 +134,7 @@ const Portfolio = () => {
         {/* Enhanced View All CTA */}
         <AnimateOnScroll animation="bounce-in" delay={400}>
           <div className="text-center">
-            <button className="group bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-8 py-4 rounded-lg hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 text-lg font-semibold transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl">
+            <button className="group bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 text-base sm:text-lg font-semibold transform hover:scale-105 hover:-translate-y-1 shadow-lg hover:shadow-xl">
               <span className="group-hover:animate-pulse">View All Projects on GitHub</span>
             </button>
           </div>

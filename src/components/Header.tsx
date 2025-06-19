@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
@@ -21,7 +22,7 @@ const Header = () => {
     } else {
       document.documentElement.classList.remove('dark');
     }
-  }, [isDarkMode]);
+  }, []);
 
   const navItems = [
     { label: 'Home', href: '#home' },
@@ -34,11 +35,11 @@ const Header = () => {
   return (
     <header className={`fixed top-0 w-full z-50 transition-all duration-500 ${
       isScrolled 
-        ? 'py-3' 
-        : 'py-4'
+        ? 'py-2 sm:py-3' 
+        : 'py-3 sm:py-4'
     }`}>
       {/* Glass morphism background */}
-      <div className={`mx-4 lg:mx-8 rounded-full transition-all duration-500 ${
+      <div className={`mx-2 sm:mx-4 lg:mx-8 rounded-full transition-all duration-500 ${
         isScrolled 
           ? 'bg-white/90 dark:bg-slate-900/90 backdrop-blur-lg shadow-xl border border-white/20 dark:border-slate-700/30' 
           : 'bg-white/80 dark:bg-slate-900/80 backdrop-blur-md shadow-lg border border-white/10 dark:border-slate-700/20'
@@ -50,30 +51,30 @@ const Header = () => {
           <div className="absolute top-2 right-16 w-8 h-8 bg-emerald-300/30 dark:bg-emerald-400/20 rounded-full blur-lg"></div>
         </div>
 
-        <div className="relative px-6 lg:px-8 py-3">
+        <div className="relative px-3 sm:px-6 lg:px-8 py-2 sm:py-3">
           <div className="flex items-center justify-between">
             
-            {/* Left: Profile Image + Name with subtle circular background */}
-            <div className="relative flex items-center">
+            {/* Left: Profile Image + Name */}
+            <div className="relative flex items-center min-w-0 flex-shrink-0">
               <div className="absolute -inset-2 bg-emerald-100/40 dark:bg-emerald-900/30 rounded-full blur-sm"></div>
-              <div className="relative flex items-center space-x-3">
-                {/* Profile Image - Made smaller */}
-                <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
+              <div className="relative flex items-center space-x-2 sm:space-x-3">
+                {/* Profile Image - Responsive sizing */}
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg flex-shrink-0">
                   <img
                     src="/lovable-uploads/7929d93d-c5a9-40fc-a2c1-0df9fd8b905a.png"
                     alt="Rohit P. Chavan"
                     className="w-full h-full object-cover"
                   />
                 </div>
-                {/* Name */}
-                <div className="flex items-center space-x-1">
-                  <span className="text-xl lg:text-2xl font-semibold text-slate-800 dark:text-slate-100">
+                {/* Name - Responsive text */}
+                <div className="flex items-center space-x-1 min-w-0">
+                  <span className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-800 dark:text-slate-100 truncate">
                     Rohit
                   </span>
-                  <span className="text-xl lg:text-2xl font-light text-emerald-600 dark:text-emerald-400">
+                  <span className="text-lg sm:text-xl lg:text-2xl font-light text-emerald-600 dark:text-emerald-400 truncate">
                     Chavan
                   </span>
-                  <div className="w-2 h-2 bg-emerald-500 rounded-full ml-2 animate-pulse"></div>
+                  <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-emerald-500 rounded-full ml-1 sm:ml-2 animate-pulse flex-shrink-0"></div>
                 </div>
               </div>
             </div>
@@ -84,7 +85,7 @@ const Header = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="group relative px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 font-medium text-sm lg:text-base rounded-full hover:bg-emerald-50/80 dark:hover:bg-emerald-900/30"
+                  className="group relative px-3 lg:px-4 py-2 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-all duration-300 font-medium text-sm lg:text-base rounded-full hover:bg-emerald-50/80 dark:hover:bg-emerald-900/30 whitespace-nowrap"
                 >
                   <span className="relative z-10">{item.label}</span>
                   {/* Active indicator dot */}
@@ -94,7 +95,7 @@ const Header = () => {
             </nav>
 
             {/* Right: Theme Toggle + Mobile Menu */}
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
               <ThemeToggle 
                 isDark={isDarkMode} 
                 onToggle={() => setIsDarkMode(!isDarkMode)} 
@@ -103,13 +104,13 @@ const Header = () => {
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                className="md:hidden p-2 rounded-full hover:bg-emerald-50/80 dark:hover:bg-emerald-900/30 transition-all duration-300"
+                className="md:hidden p-2 rounded-full hover:bg-emerald-50/80 dark:hover:bg-emerald-900/30 transition-all duration-300 flex-shrink-0"
                 aria-label="Toggle mobile menu"
               >
                 {isMobileMenuOpen ? (
-                  <X className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+                  <X className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700 dark:text-slate-300" />
                 ) : (
-                  <Menu className="w-5 h-5 text-slate-700 dark:text-slate-300" />
+                  <Menu className="w-4 h-4 sm:w-5 sm:h-5 text-slate-700 dark:text-slate-300" />
                 )}
               </button>
             </div>
@@ -118,7 +119,7 @@ const Header = () => {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden mx-4 mt-2 transition-all duration-300 overflow-hidden ${
+      <div className={`md:hidden mx-2 sm:mx-4 mt-2 transition-all duration-300 overflow-hidden ${
         isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
       }`}>
         <div className="bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg rounded-2xl border border-white/20 dark:border-slate-700/30 shadow-xl p-4">
@@ -127,7 +128,7 @@ const Header = () => {
               <a
                 key={item.label}
                 href={item.href}
-                className="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/80 dark:hover:bg-emerald-900/30 rounded-xl transition-all duration-300 font-medium"
+                className="block py-3 px-4 text-slate-700 dark:text-slate-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-emerald-50/80 dark:hover:bg-emerald-900/30 rounded-xl transition-all duration-300 font-medium text-base"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {item.label}
