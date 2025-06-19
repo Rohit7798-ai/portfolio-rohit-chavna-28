@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
@@ -58,8 +57,8 @@ const Header = () => {
             <div className="relative flex items-center">
               <div className="absolute -inset-2 bg-emerald-100/40 dark:bg-emerald-900/30 rounded-full blur-sm"></div>
               <div className="relative flex items-center space-x-3">
-                {/* Profile Image */}
-                <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
+                {/* Profile Image - Made smaller */}
+                <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
                   <img
                     src="/lovable-uploads/7929d93d-c5a9-40fc-a2c1-0df9fd8b905a.png"
                     alt="Rohit P. Chavan"
