@@ -61,7 +61,7 @@ const Header = () => {
                 {/* Profile Image */}
                 <div className="w-10 h-10 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
                   <img
-                    src="/lovable-uploads/e9409933-388b-4597-8a92-9215d717c7ab.png"
+                    src="/lovable-uploads/676e3de8-ec80-499e-9d50-e7314b385906.png"
                     alt="Rohit P. Chavan"
                     className="w-full h-full object-cover"
                   />
