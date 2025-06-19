@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
@@ -53,18 +54,33 @@ const Header = () => {
         <div className="relative px-6 lg:px-8 py-3">
           <div className="flex items-center justify-between">
             
-            {/* Left: Profile Image + Name with subtle circular background */}
+            {/* Left: Profile Image + Name with enhanced styling */}
             <div className="relative flex items-center">
               <div className="absolute -inset-2 bg-emerald-100/40 dark:bg-emerald-900/30 rounded-full blur-sm"></div>
               <div className="relative flex items-center space-x-3">
-                {/* Profile Image - Made smaller */}
-                <div className="w-8 h-8 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg">
-                  <img
-                    src="/lovable-uploads/7929d93d-c5a9-40fc-a2c1-0df9fd8b905a.png"
-                    alt="Rohit P. Chavan"
-                    className="w-full h-full object-cover"
-                  />
+                {/* Enhanced Profile Image with better positioning and styling */}
+                <div className="relative">
+                  {/* Glow effect behind the image */}
+                  <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/30 to-teal-400/30 rounded-full blur-md scale-110"></div>
+                  
+                  {/* Main image container with gradient border */}
+                  <div className="relative w-10 h-10 rounded-full overflow-hidden shadow-lg bg-gradient-to-r from-emerald-300 via-white to-emerald-300 p-0.5">
+                    <div className="w-full h-full rounded-full overflow-hidden bg-white">
+                      <img
+                        src="/lovable-uploads/fae11e16-00f1-43b2-bfcc-5f59e2cad1b0.png"
+                        alt="Rohit P. Chavan"
+                        className="w-full h-full object-cover object-center scale-110 -translate-y-1"
+                        style={{ 
+                          objectPosition: 'center 35%'
+                        }}
+                      />
+                    </div>
+                  </div>
+                  
+                  {/* Inner shadow for depth */}
+                  <div className="absolute inset-0 rounded-full shadow-inner opacity-20"></div>
                 </div>
+                
                 {/* Name */}
                 <div className="flex items-center space-x-1">
                   <span className="text-xl lg:text-2xl font-semibold text-slate-800 dark:text-slate-100">
