@@ -56,34 +56,16 @@ const Header = () => {
             
             {/* Left: Profile Image + Name */}
             <div className="relative flex items-center min-w-0 flex-shrink-0">
-              {/* Enhanced background glow */}
-              <div className="absolute -inset-3 bg-gradient-to-r from-emerald-100/60 via-teal-100/40 to-emerald-100/60 dark:from-emerald-900/40 dark:via-teal-900/30 dark:to-emerald-900/40 rounded-full blur-lg"></div>
-              
+              <div className="absolute -inset-2 bg-emerald-100/40 dark:bg-emerald-900/30 rounded-full blur-sm"></div>
               <div className="relative flex items-center space-x-2 sm:space-x-3">
-                {/* Enhanced Profile Image with new styling */}
-                <div className="relative group">
-                  {/* Outer glow shadow */}
-                  <div className="absolute -inset-1 bg-gradient-to-r from-emerald-400/30 to-teal-400/30 rounded-full blur-sm opacity-75 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  {/* Main image container with enhanced border */}
-                  <div className="relative w-8 h-8 sm:w-9 sm:h-9 rounded-full overflow-hidden border-2 border-transparent bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 p-0.5 shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
-                    {/* Inner container for image */}
-                    <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-slate-800">
-                      <img
-                        src="/lovable-uploads/3affa505-bd3e-40d0-a765-c9c795abf9e5.png"
-                        alt="Rohit P. Chavan"
-                        className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
-                      />
-                    </div>
-                    
-                    {/* Inner glow effect */}
-                    <div className="absolute inset-0 rounded-full bg-gradient-to-t from-transparent via-transparent to-white/10 dark:to-slate-900/10"></div>
-                  </div>
-                  
-                  {/* Floating effect shadow */}
-                  <div className="absolute inset-0 rounded-full shadow-lg opacity-0 group-hover:opacity-50 transition-opacity duration-300 transform translate-y-1"></div>
+                {/* Profile Image - Responsive sizing */}
+                <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg flex-shrink-0">
+                  <img
+                    src="/lovable-uploads/7929d93d-c5a9-40fc-a2c1-0df9fd8b905a.png"
+                    alt="Rohit P. Chavan"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                
                 {/* Name - Responsive text */}
                 <div className="flex items-center space-x-1 min-w-0">
                   <span className="text-lg sm:text-xl lg:text-2xl font-semibold text-slate-800 dark:text-slate-100 truncate">
