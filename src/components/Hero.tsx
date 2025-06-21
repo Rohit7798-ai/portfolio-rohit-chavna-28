@@ -169,14 +169,14 @@ const Hero = () => {
                 
                 {/* Main image container */}
                 <div className="relative bg-white/90 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-2xl border border-emerald-100 group-hover:shadow-3xl transition-all duration-500">
-                  {/* Circular headshot image with updated photo */}
+                  {/* Circular headshot image with adjusted positioning */}
                   <div className="w-full h-64 sm:h-80 lg:h-96 flex items-center justify-center mb-4 sm:mb-6">
                     <div className="relative">
                       <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-emerald-500 to-teal-500 shadow-2xl">
                         <img
                           src="/lovable-uploads/20137c00-9a0e-498f-954f-9f9160cf583d.png"
                           alt="Rohit P. Chavan - Data Science Student"
-                          className="w-full h-full object-cover object-center"
+                          className="w-full h-full object-cover object-[center_20%]"
                         />
                       </div>
                       {/* Decorative ring around the image */}
