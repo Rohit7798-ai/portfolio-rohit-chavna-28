@@ -15,6 +15,7 @@ const AnimateOnScroll = React.memo(({
   delay = 0 
 }: IntersectionObserverProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const timeoutsRef = useRef<Set<NodeJS.Timeout>>(new Set());
 
   const handleIntersection = useCallback((entries: IntersectionObserverEntry[]) => {
     entries.forEach((entry) => {
@@ -23,8 +24,8 @@ const AnimateOnScroll = React.memo(({
           entry.target.classList.add('animate-in');
         }, delay);
         
-        // Cleanup timeout if component unmounts
-        return () => clearTimeout(timeoutId);
+        // Store timeout ID for cleanup
+        timeoutsRef.current.add(timeoutId);
       }
     });
   }, [delay]);
@@ -45,6 +46,10 @@ const AnimateOnScroll = React.memo(({
         observer.unobserve(currentRef);
       }
       observer.disconnect();
+      
+      // Clear all timeouts
+      timeoutsRef.current.forEach(timeoutId => clearTimeout(timeoutId));
+      timeoutsRef.current.clear();
     };
   }, [handleIntersection]);
 
