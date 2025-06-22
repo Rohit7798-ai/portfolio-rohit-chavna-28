@@ -8,7 +8,7 @@ interface IntersectionObserverProps {
   delay?: number;
 }
 
-const AnimateOnScroll = React.memo(({ 
+const AnimateOnScroll = ({ 
   children, 
   className = '', 
   animation = 'fade-in', 
@@ -73,8 +73,6 @@ const AnimateOnScroll = React.memo(({
       {children}
     </div>
   );
-});
-
-AnimateOnScroll.displayName = 'AnimateOnScroll';
+};
 
 export default AnimateOnScroll;
