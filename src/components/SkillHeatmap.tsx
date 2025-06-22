@@ -1,15 +1,15 @@
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { Code, Database, BarChart3, Brain, Zap, Target } from 'lucide-react';
 
-const SkillHeatmap = () => {
+const SkillHeatmap = React.memo(() => {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
   }, []);
 
-  const skills = [
+  const skills = useMemo(() => [
     { 
       name: 'Python', 
       level: 95, 
@@ -82,9 +82,9 @@ const SkillHeatmap = () => {
       description: 'ML algorithms & model evaluation',
       projects: '5+ models'
     }
-  ];
+  ], []);
 
-  const getHeatColor = (heat: number) => {
+  const getHeatColor = useMemo(() => (heat: number) => {
     const colors = {
       1: 'bg-emerald-100 text-emerald-700 border-emerald-200',
       2: 'bg-emerald-200 text-emerald-800 border-emerald-300',
@@ -93,11 +93,11 @@ const SkillHeatmap = () => {
       5: 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-700'
     };
     return colors[heat as keyof typeof colors];
-  };
+  }, []);
 
-  const getFireEmojis = (heat: number) => {
+  const getFireEmojis = useMemo(() => (heat: number) => {
     return '🔥'.repeat(heat);
-  };
+  }, []);
 
   return (
     <div className="space-y-6">
@@ -110,7 +110,7 @@ const SkillHeatmap = () => {
         {skills.map((skill, index) => (
           <div
             key={skill.name}
-            className={`group relative p-4 rounded-xl border-2 hover:border-emerald-400 transition-all duration-300 cursor-pointer transform hover:scale-105 hover:-translate-y-1 ${getHeatColor(skill.heat)} animate-fade-in hover:shadow-lg`}
+            className={`group relative p-4 rounded-xl border-2 hover:border-emerald-400 transition-all duration-300 cursor-pointer transform hover:scale-105 ${getHeatColor(skill.heat)} will-change-transform`}
             style={{ animationDelay: `${index * 0.1}s` }}
           >
             <div className="flex flex-col items-center text-center space-y-2">
@@ -120,7 +120,7 @@ const SkillHeatmap = () => {
               <div className="text-lg">{getFireEmojis(skill.heat)}</div>
             </div>
 
-            {/* Enhanced Tooltip */}
+            {/* Optimized Tooltip */}
             <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-4 py-3 rounded-lg text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 w-48">
               <div className="font-semibold mb-1">{skill.name}</div>
               <div className="mb-1">Skill Level: {skill.level}%</div>
@@ -129,7 +129,7 @@ const SkillHeatmap = () => {
               <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
             </div>
 
-            {/* Progress Ring */}
+            {/* Optimized Progress Ring */}
             <div className="absolute -top-2 -right-2 w-8 h-8">
               <svg className="w-8 h-8 transform -rotate-90" viewBox="0 0 32 32">
                 <circle
@@ -150,7 +150,10 @@ const SkillHeatmap = () => {
                   fill="transparent"
                   strokeDasharray={`${(skill.level / 100) * 87.96} 87.96`}
                   className="opacity-80 transition-all duration-1000"
-                  style={{ strokeDashoffset: mounted ? 0 : 87.96 }}
+                  style={{ 
+                    strokeDashoffset: mounted ? 0 : 87.96,
+                    willChange: 'stroke-dashoffset'
+                  }}
                 />
               </svg>
               <div className="absolute inset-0 flex items-center justify-center text-xs font-bold">
@@ -161,7 +164,7 @@ const SkillHeatmap = () => {
         ))}
       </div>
 
-      {/* Legend */}
+      {/* Optimized Legend */}
       <div className="flex justify-center items-center gap-4 text-sm text-forest-600">
         <span>Expertise Level:</span>
         {[1, 2, 3, 4, 5].map((level) => (
@@ -173,6 +176,8 @@ const SkillHeatmap = () => {
       </div>
     </div>
   );
-};
+});
+
+SkillHeatmap.displayName = 'SkillHeatmap';
 
 export default SkillHeatmap;
