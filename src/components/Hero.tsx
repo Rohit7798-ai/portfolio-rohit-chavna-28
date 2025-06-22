@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
 import { ChevronDown, Download, Mail, Linkedin, Github, Code, Database, BarChart3, Users, TrendingUp, Award } from 'lucide-react';
 import SkillHeatmap from './SkillHeatmap';
@@ -154,14 +153,14 @@ const Hero = React.memo(() => {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-4 sm:mb-6">
                   <button 
                     onClick={handleViewProjects}
-                    className="group bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg hover:shadow-xl"
+                    className="group bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-emerald-400"
                   >
                     <span>View My Projects</span>
                     <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
                   </button>
                   <button 
                     onClick={handleDownloadResume}
-                    className="group border-2 border-forest-600 text-forest-600 px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105"
+                    className="group border-2 border-forest-600 text-forest-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:border-forest-700"
                   >
                     <span>Download Resume</span>
                     <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" />
