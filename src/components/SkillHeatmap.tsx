@@ -1,6 +1,13 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { Code2, Database, BarChart3, Brain, Zap, Target, Calculator, TrendingUp } from 'lucide-react';
+import pythonIcon from '../assets/icons/python-icon.png';
+import pandasIcon from '../assets/icons/pandas-icon.png';
+import numpyIcon from '../assets/icons/numpy-icon.png';
+import matplotlibIcon from '../assets/icons/matplotlib-icon.png';
+import sklearnIcon from '../assets/icons/sklearn-icon.png';
+import dataAnalysisIcon from '../assets/icons/data-analysis-icon.png';
+import machineLearningIcon from '../assets/icons/machine-learning-icon.png';
+import statisticsIcon from '../assets/icons/statistics-icon.png';
 
 const SkillHeatmap = () => {
   const [mounted, setMounted] = useState(false);
@@ -13,7 +20,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Python', 
       level: 95, 
-      icon: Code2, 
+      icon: pythonIcon, 
       category: 'Programming', 
       heat: 5,
       description: 'Used for data analysis, ML models & web apps',
@@ -22,7 +29,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Data Analysis', 
       level: 90, 
-      icon: TrendingUp, 
+      icon: dataAnalysisIcon, 
       category: 'Analytics', 
       heat: 5,
       description: 'Statistical analysis & data wrangling',
@@ -31,7 +38,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Pandas', 
       level: 90, 
-      icon: Database, 
+      icon: pandasIcon, 
       category: 'Libraries', 
       heat: 5,
       description: 'Data manipulation & cleaning expert',
@@ -40,7 +47,7 @@ const SkillHeatmap = () => {
     { 
       name: 'NumPy', 
       level: 85, 
-      icon: Calculator, 
+      icon: numpyIcon, 
       category: 'Libraries', 
       heat: 4,
       description: 'Numerical computing & array operations',
@@ -49,7 +56,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Machine Learning', 
       level: 80, 
-      icon: Brain, 
+      icon: machineLearningIcon, 
       category: 'AI/ML', 
       heat: 4,
       description: 'Supervised & unsupervised learning',
@@ -58,7 +65,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Matplotlib', 
       level: 85, 
-      icon: BarChart3, 
+      icon: matplotlibIcon, 
       category: 'Visualization', 
       heat: 4,
       description: 'Data visualization & plotting',
@@ -67,7 +74,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Statistical Modeling', 
       level: 85, 
-      icon: Target, 
+      icon: statisticsIcon, 
       category: 'Statistics', 
       heat: 4,
       description: 'Hypothesis testing & predictive models',
@@ -76,7 +83,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Scikit-learn', 
       level: 75, 
-      icon: Zap, 
+      icon: sklearnIcon, 
       category: 'AI/ML', 
       heat: 3,
       description: 'ML algorithms & model evaluation',
@@ -116,7 +123,7 @@ const SkillHeatmap = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <div className="flex flex-col items-center text-center space-y-2">
-                <IconComponent className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
+                <img src={skill.icon} alt={skill.name} className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
                 <div className="font-semibold text-sm">{skill.name}</div>
                 <div className="text-xs opacity-80">{skill.category}</div>
                 <div className="text-lg">{getFireEmojis(skill.heat)}</div>
