@@ -1,6 +1,6 @@
 
 import React, { useState, useEffect, useMemo } from 'react';
-import { Code, Database, BarChart3, Brain, Zap, Target } from 'lucide-react';
+import { Code2, Database, BarChart3, Brain, Zap, Target, Calculator, TrendingUp } from 'lucide-react';
 
 const SkillHeatmap = () => {
   const [mounted, setMounted] = useState(false);
@@ -13,7 +13,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Python', 
       level: 95, 
-      icon: Code, 
+      icon: Code2, 
       category: 'Programming', 
       heat: 5,
       description: 'Used for data analysis, ML models & web apps',
@@ -22,7 +22,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Data Analysis', 
       level: 90, 
-      icon: BarChart3, 
+      icon: TrendingUp, 
       category: 'Analytics', 
       heat: 5,
       description: 'Statistical analysis & data wrangling',
@@ -40,7 +40,7 @@ const SkillHeatmap = () => {
     { 
       name: 'NumPy', 
       level: 85, 
-      icon: Target, 
+      icon: Calculator, 
       category: 'Libraries', 
       heat: 4,
       description: 'Numerical computing & array operations',
@@ -67,7 +67,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Statistical Modeling', 
       level: 85, 
-      icon: Zap, 
+      icon: Target, 
       category: 'Statistics', 
       heat: 4,
       description: 'Hypothesis testing & predictive models',
@@ -76,7 +76,7 @@ const SkillHeatmap = () => {
     { 
       name: 'Scikit-learn', 
       level: 75, 
-      icon: Brain, 
+      icon: Zap, 
       category: 'AI/ML', 
       heat: 3,
       description: 'ML algorithms & model evaluation',
