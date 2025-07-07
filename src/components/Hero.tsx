@@ -62,7 +62,7 @@ const Hero = React.memo(() => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-sage-50 via-emerald-50 to-teal-50 pt-20 sm:pt-16 lg:pt-0">
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-white pt-20">
       {/* Optimized Floating Particles Background */}
       <div className="absolute inset-0 pointer-events-none will-change-transform">
         {/* Main floating elements */}
@@ -102,101 +102,61 @@ const Hero = React.memo(() => {
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
-          {/* Content */}
+        <div className="text-center max-w-4xl mx-auto">
           <AnimateOnScroll animation="slide-up">
-            <div className={`text-center lg:text-left transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="mb-4 sm:mb-6">
-                <span className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
+            <div className={`transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className="mb-8">
+                <span className="inline-block bg-emerald-100 text-emerald-800 px-4 py-2 rounded-full text-sm font-semibold mb-8">
                   📍 Shirpur, Maharashtra, India
                 </span>
               </div>
               
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-forest-900 mb-4 sm:mb-6 leading-tight">
-                <span className="block">Rohit P.</span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
-                  Chavan
-                </span>
+              <h1 className="text-4xl md:text-6xl font-bold text-forest-900 mb-6 leading-tight">
+                <span className="block">Rohit P. Chavan</span>
               </h1>
               
-              {/* Optimized typewriter designation */}
-              <div className="text-lg sm:text-xl md:text-2xl text-forest-700 mb-3 sm:mb-4 h-6 sm:h-8">
+              <div className="text-xl md:text-2xl text-emerald-600 font-semibold mb-4 h-8">
                 <span>{designations[currentDesignation]}</span>
               </div>
               
-              {/* Enhanced Tagline */}
-              <div className="text-base sm:text-lg md:text-xl text-emerald-600 font-semibold mb-3 sm:mb-4">
-                <span>"Solving real-world problems with code and creativity"</span>
-              </div>
-              
-              <p className="text-sm sm:text-base lg:text-lg text-forest-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-                Passionate about transforming data into actionable insights using Python, machine learning, and statistical modeling. 
-                Building innovative solutions with AI and data visualization.
+              <p className="text-lg text-forest-600 mb-12 max-w-2xl mx-auto leading-relaxed">
+                Passionate about transforming data into actionable insights using Python, machine learning, and statistical modeling.
               </p>
 
-              {/* Achievement Stats with optimized animations */}
-              <AnimateOnScroll animation="scale-in" delay={300}>
-                <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
-                  {achievements.map((achievement, index) => (
-                    <div key={index} className="text-center p-2 sm:p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-emerald-100 hover:shadow-lg transition-all duration-300 group cursor-pointer">
-                      <achievement.icon className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-600 mx-auto mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300" />
-                      <div className="text-lg sm:text-2xl font-bold text-emerald-600">{achievement.number}</div>
-                      <div className="text-xs sm:text-sm font-medium text-forest-700 leading-tight">{achievement.label}</div>
-                      <div className="text-xs text-forest-500 hidden sm:block">{achievement.description}</div>
-                    </div>
-                  ))}
-                </div>
-              </AnimateOnScroll>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+                <button 
+                  onClick={handleViewProjects}
+                  className="bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-8 py-4 rounded-full text-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 transform hover:scale-105 shadow-lg"
+                >
+                  View My Projects
+                </button>
+                <button 
+                  onClick={handleDownloadResume}
+                  className="border-2 border-forest-600 text-forest-600 px-8 py-4 rounded-full text-lg font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
+                  <Download className="w-5 h-5 inline mr-2" />
+                  Download Resume
+                </button>
+              </div>
               
-              {/* Optimized CTA Buttons */}
-              <AnimateOnScroll animation="bounce-in" delay={500}>
-                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-4 sm:mb-6">
-                  <button 
-                    onClick={handleViewProjects}
-                    className="group bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-emerald-400"
-                  >
-                    <span>View My Projects</span>
-                    <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
-                  </button>
-                  <button 
-                    onClick={handleDownloadResume}
-                    className="group border-2 border-forest-600 text-forest-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:border-forest-700"
-                  >
-                    <span>Download Resume</span>
-                    <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" />
-                  </button>
-                </div>
-              </AnimateOnScroll>
+              {/* Social Links */}
+              <div className="flex justify-center gap-6 mb-4">
+                <a href="mailto:chavanrohit2213@gmail.com" className="p-4 bg-white rounded-full border text-forest-600 hover:bg-emerald-600 hover:text-white transition-all duration-300 shadow-lg">
+                  <Mail className="w-6 h-6" />
+                </a>
+                <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="p-4 bg-white rounded-full border text-forest-600 hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-lg">
+                  <Linkedin className="w-6 h-6" />
+                </a>
+                <a href="https://github.com/RohitTips" target="_blank" rel="noopener noreferrer" className="p-4 bg-white rounded-full border text-forest-600 hover:bg-gray-800 hover:text-white transition-all duration-300 shadow-lg">
+                  <Github className="w-6 h-6" />
+                </a>
+              </div>
               
-              {/* Optimized Social Links */}
-              <AnimateOnScroll animation="fade-in" delay={700}>
-                <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <a href="mailto:chavanrohit2213@gmail.com" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-emerald-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-                    <Mail className="w-4 h-4 sm:w-6 sm:h-6" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-                    <Linkedin className="w-4 h-4 sm:w-6 sm:h-6" />
-                  </a>
-                  <a href="https://github.com/RohitTips" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-                    <Github className="w-4 h-4 sm:w-6 sm:h-6" />
-                  </a>
-                </div>
-              </AnimateOnScroll>
-              
-              {/* Social Labels */}
-              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500">
+              <div className="flex justify-center gap-6 text-sm text-forest-500">
                 <span>Email</span>
                 <span>LinkedIn</span>
                 <span>GitHub</span>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
-          {/* Skills Heatmap */}
-          <AnimateOnScroll animation="scale-in" delay={200}>
-            <div className={`relative transition-all duration-1000 mt-8 lg:mt-0 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-2xl border border-emerald-100">
-                <SkillHeatmap />
               </div>
             </div>
           </AnimateOnScroll>

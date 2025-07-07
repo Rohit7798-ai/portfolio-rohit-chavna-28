@@ -49,18 +49,16 @@ const Portfolio = () => {
     : projects.filter(project => project.category === filter);
 
   return (
-    <section id="portfolio" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sage-50 to-emerald-50">
+    <section id="portfolio" className="py-20 bg-white">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <AnimateOnScroll animation="fade-in">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-forest-900 mb-3 sm:mb-4">Featured Projects</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-forest-700 max-w-3xl mx-auto leading-relaxed">
-              A showcase of data science projects demonstrating expertise in Python, statistical modeling, and machine learning
-            </p>
-          </div>
-        </AnimateOnScroll>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Projects</h2>
+          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+            Selected GitHub repositories showcasing data science and machine learning projects
+          </p>
+        </div>
 
         {/* Enhanced Filter Buttons - Mobile Optimized */}
         <AnimateOnScroll animation="slide-up" delay={200}>
