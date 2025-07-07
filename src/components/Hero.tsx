@@ -192,37 +192,11 @@ const Hero = React.memo(() => {
             </div>
           </AnimateOnScroll>
 
-          {/* Hero Image/Illustration with Skill Heatmap */}
+          {/* Skills Heatmap */}
           <AnimateOnScroll animation="scale-in" delay={200}>
             <div className={`relative transition-all duration-1000 mt-8 lg:mt-0 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="relative group">
-                {/* Optimized backdrop with reduced blur */}
-                <div className="absolute inset-0 bg-gradient-to-br from-emerald-400 via-teal-400 to-sage-400 rounded-full blur-2xl opacity-30 group-hover:opacity-40 transition-opacity duration-500"></div>
-                <div className="absolute inset-2 sm:inset-4 bg-gradient-to-r from-emerald-200 to-teal-200 rounded-3xl blur-lg opacity-20" style={{ animationDelay: '1s' }}></div>
-                
-                {/* Main image container */}
-                <div className="relative bg-white/90 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-2xl border border-emerald-100 group-hover:shadow-3xl transition-all duration-500">
-                  {/* Optimized circular headshot image with lazy loading */}
-                  <div className="w-full h-64 sm:h-80 lg:h-96 flex items-center justify-center mb-4 sm:mb-6">
-                    <div className="relative">
-                      <div className="w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden border-4 border-gradient-to-r from-emerald-500 to-teal-500 shadow-2xl">
-                        <img
-                          src="/lovable-uploads/20137c00-9a0e-498f-954f-9f9160cf583d.png"
-                          alt="Rohit P. Chavan - Data Science Student"
-                          className="w-full h-full object-cover object-[center_20%]"
-                          loading="lazy"
-                        />
-                      </div>
-                      {/* Reduced decorative ring animation */}
-                      <div className="absolute inset-0 rounded-full border-2 border-emerald-500 opacity-30"></div>
-                    </div>
-                  </div>
-                  
-                  {/* Replace skills progress bars with dynamic heatmap */}
-                  <div className="mt-4 sm:mt-6">
-                    <SkillHeatmap />
-                  </div>
-                </div>
+              <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-2xl border border-emerald-100">
+                <SkillHeatmap />
               </div>
             </div>
           </AnimateOnScroll>
