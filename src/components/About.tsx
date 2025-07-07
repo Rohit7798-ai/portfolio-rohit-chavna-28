@@ -56,7 +56,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50">
+    <section id="about" className="py-16 bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
       {/* Floating 3D Elements */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-10 w-16 h-16 bg-emerald-300 rounded-full opacity-20 animate-bounce" style={{ animationDelay: '0s', animationDuration: '3s' }}></div>
@@ -67,10 +67,10 @@ const About = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">About Me</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            BSc Data Science student passionate about solving real-world problems through data and AI
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-bold text-forest-900 mb-3 animate-fade-in">About Rohit</h2>
+          <p className="text-xl text-forest-700 max-w-3xl mx-auto font-medium">
+            BSc Data Science student with hands-on experience in Python programming, data analysis, and statistical modeling
           </p>
         </div>
 

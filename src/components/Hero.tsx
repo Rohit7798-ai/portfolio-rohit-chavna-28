@@ -62,119 +62,151 @@ const Hero = React.memo(() => {
   }, []);
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-emerald-50">
-      {/* Modern geometric background */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-br from-blue-400/10 to-emerald-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute bottom-32 right-20 w-96 h-96 bg-gradient-to-br from-emerald-400/10 to-teal-400/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
-        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-br from-blue-300/5 to-purple-300/5 rounded-full blur-2xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+    <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-sage-50 via-emerald-50 to-teal-50 pt-20 sm:pt-16 lg:pt-0">
+      {/* Optimized Floating Particles Background */}
+      <div className="absolute inset-0 pointer-events-none will-change-transform">
+        {/* Main floating elements */}
+        {floatingElements.map((element, index) => (
+          <div
+            key={index}
+            className={`absolute ${element.size} bg-${element.color} rounded-full opacity-20 ${element.position}`}
+            style={{ 
+              animationName: 'bounce',
+              animationDelay: element.delay, 
+              animationDuration: element.duration,
+              animationIterationCount: 'infinite'
+            }}
+          ></div>
+        ))}
+        
+        {/* Reduced particle system for better performance */}
+        {[...Array(particleCount)].map((_, i) => (
+          <div
+            key={`particle-${i}`}
+            className={`absolute w-1 h-1 sm:w-2 sm:h-2 bg-emerald-400 rounded-full opacity-30`}
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationName: 'bounce',
+              animationDelay: `${Math.random() * 5}s`,
+              animationDuration: `${3 + Math.random() * 4}s`,
+              animationIterationCount: 'infinite'
+            }}
+          />
+        ))}
+        
+        {/* Optimized geometric shapes */}
+        <div className="absolute top-1/4 left-1/4 w-3 h-3 sm:w-4 sm:h-4 lg:w-6 lg:h-6 bg-emerald-400 rotate-45 opacity-30 animate-spin" style={{ animationDuration: '12s' }}></div>
+        <div className="absolute bottom-1/3 right-1/4 w-4 h-4 sm:w-6 sm:h-6 lg:w-8 lg:h-8 border-2 border-teal-400 rounded-full opacity-25 animate-pulse"></div>
+        <div className="absolute top-2/3 left-1/3 w-6 h-1 sm:w-8 sm:h-1 lg:w-10 lg:h-2 bg-forest-300 rounded-full opacity-20 animate-pulse" style={{ animationDelay: '1s' }}></div>
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Profile */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+          {/* Content */}
           <AnimateOnScroll animation="slide-up">
-            <div className={`transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-              <div className="relative">
-                {/* Profile image placeholder with modern design */}
-                <div className="w-80 h-80 mx-auto lg:mx-0 mb-8 relative">
-                  <div className="w-full h-full bg-gradient-to-br from-blue-100 to-emerald-100 rounded-3xl flex items-center justify-center shadow-2xl">
-                    <div className="w-64 h-64 bg-gradient-to-br from-blue-500 to-emerald-500 rounded-2xl flex items-center justify-center">
-                      <span className="text-6xl font-bold text-white">RC</span>
-                    </div>
-                  </div>
-                  {/* Floating elements around profile */}
-                  <div className="absolute -top-4 -right-4 w-12 h-12 bg-blue-500 rounded-full flex items-center justify-center shadow-lg">
-                    <Code className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="absolute -bottom-4 -left-4 w-12 h-12 bg-emerald-500 rounded-full flex items-center justify-center shadow-lg">
-                    <Database className="w-6 h-6 text-white" />
-                  </div>
-                  <div className="absolute top-1/2 -right-6 w-10 h-10 bg-teal-500 rounded-full flex items-center justify-center shadow-lg">
-                    <BarChart3 className="w-5 h-5 text-white" />
-                  </div>
-                </div>
-              </div>
-            </div>
-          </AnimateOnScroll>
-
-          {/* Right side - Content */}
-          <AnimateOnScroll animation="slide-up" delay={200}>
-            <div className="text-center lg:text-left">
-              <div className="mb-6">
-                <span className="inline-block bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold">
+            <div className={`text-center lg:text-left transition-all duration-1000 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className="mb-4 sm:mb-6">
+                <span className="inline-block bg-emerald-100 text-emerald-800 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm font-semibold mb-4">
                   📍 Shirpur, Maharashtra, India
                 </span>
               </div>
               
-              <h1 className="text-5xl lg:text-7xl font-bold text-gray-900 mb-4 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-forest-900 mb-4 sm:mb-6 leading-tight">
                 <span className="block">Rohit P.</span>
-                <span className="block bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">Chavan</span>
+                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
+                  Chavan
+                </span>
               </h1>
               
-              <div className="text-2xl lg:text-3xl text-gray-600 font-medium mb-6 h-12">
-                <span className="bg-gradient-to-r from-blue-600 to-emerald-600 bg-clip-text text-transparent">
-                  {designations[currentDesignation]}
-                </span>
+              {/* Optimized typewriter designation */}
+              <div className="text-lg sm:text-xl md:text-2xl text-forest-700 mb-3 sm:mb-4 h-6 sm:h-8">
+                <span>{designations[currentDesignation]}</span>
               </div>
               
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Passionate about transforming data into actionable insights using Python, machine learning, and statistical modeling.
+              {/* Enhanced Tagline */}
+              <div className="text-base sm:text-lg md:text-xl text-emerald-600 font-semibold mb-3 sm:mb-4">
+                <span>"Solving real-world problems with code and creativity"</span>
+              </div>
+              
+              <p className="text-sm sm:text-base lg:text-lg text-forest-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
+                Passionate about transforming data into actionable insights using Python, machine learning, and statistical modeling. 
+                Building innovative solutions with AI and data visualization.
               </p>
 
-              {/* Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-8">
-                {achievements.map((achievement, index) => (
-                  <div key={index} className="text-center p-4 bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg">
-                    <div className="w-8 h-8 mx-auto mb-2 text-blue-600">
-                      <achievement.icon className="w-full h-full" />
+              {/* Achievement Stats with optimized animations */}
+              <AnimateOnScroll animation="scale-in" delay={300}>
+                <div className="grid grid-cols-3 gap-2 sm:gap-4 mb-6 sm:mb-8">
+                  {achievements.map((achievement, index) => (
+                    <div key={index} className="text-center p-2 sm:p-4 bg-white/70 backdrop-blur-sm rounded-xl border border-emerald-100 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                      <achievement.icon className="w-4 h-4 sm:w-6 sm:h-6 text-emerald-600 mx-auto mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300" />
+                      <div className="text-lg sm:text-2xl font-bold text-emerald-600">{achievement.number}</div>
+                      <div className="text-xs sm:text-sm font-medium text-forest-700 leading-tight">{achievement.label}</div>
+                      <div className="text-xs text-forest-500 hidden sm:block">{achievement.description}</div>
                     </div>
-                    <div className="text-2xl font-bold text-gray-900">{achievement.number}</div>
-                    <div className="text-sm text-gray-600">{achievement.label}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA Buttons */}
-              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-8">
-                <button 
-                  onClick={handleViewProjects}
-                  className="bg-gradient-to-r from-blue-600 to-emerald-600 text-white px-8 py-4 rounded-2xl text-lg font-semibold hover:shadow-xl transition-all duration-300 transform hover:scale-105"
-                >
-                  View My Projects
-                </button>
-                <button 
-                  onClick={handleDownloadResume}
-                  className="border-2 border-gray-300 text-gray-700 px-8 py-4 rounded-2xl text-lg font-semibold hover:bg-gray-50 transition-all duration-300 transform hover:scale-105"
-                >
-                  <Download className="w-5 h-5 inline mr-2" />
-                  Download Resume
-                </button>
-              </div>
+                  ))}
+                </div>
+              </AnimateOnScroll>
               
-              {/* Social Links */}
-              <div className="flex justify-center lg:justify-start gap-4">
-                <a href="mailto:chavanrohit2213@gmail.com" className="w-12 h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-300 shadow-sm">
-                  <Mail className="w-5 h-5" />
-                </a>
-                <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-blue-50 hover:text-blue-600 hover:border-blue-200 transition-all duration-300 shadow-sm">
-                  <Linkedin className="w-5 h-5" />
-                </a>
-                <a href="https://github.com/RohitTips" target="_blank" rel="noopener noreferrer" className="w-12 h-12 bg-white rounded-xl border border-gray-200 flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:text-gray-700 hover:border-gray-300 transition-all duration-300 shadow-sm">
-                  <Github className="w-5 h-5" />
-                </a>
+              {/* Optimized CTA Buttons */}
+              <AnimateOnScroll animation="bounce-in" delay={500}>
+                <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center lg:justify-start mb-4 sm:mb-6">
+                  <button 
+                    onClick={handleViewProjects}
+                    className="group bg-gradient-to-r from-emerald-600 to-teal-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:from-emerald-700 hover:to-teal-700 transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 shadow-lg hover:shadow-xl border-2 border-transparent hover:border-emerald-400"
+                  >
+                    <span>View My Projects</span>
+                    <ChevronDown className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-bounce" />
+                  </button>
+                  <button 
+                    onClick={handleDownloadResume}
+                    className="group border-2 border-forest-600 text-forest-600 px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg font-semibold hover:bg-forest-600 hover:text-white transition-all duration-300 flex items-center justify-center gap-2 transform hover:scale-105 hover:border-forest-700"
+                  >
+                    <span>Download Resume</span>
+                    <Download className="w-4 h-4 sm:w-5 sm:h-5 group-hover:animate-pulse" />
+                  </button>
+                </div>
+              </AnimateOnScroll>
+              
+              {/* Optimized Social Links */}
+              <AnimateOnScroll animation="fade-in" delay={700}>
+                <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 mb-3 sm:mb-4">
+                  <a href="mailto:chavanrohit2213@gmail.com" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-emerald-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+                    <Mail className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+                    <Linkedin className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </a>
+                  <a href="https://github.com/RohitTips" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+                    <Github className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </a>
+                </div>
+              </AnimateOnScroll>
+              
+              {/* Social Labels */}
+              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500">
+                <span>Email</span>
+                <span>LinkedIn</span>
+                <span>GitHub</span>
+              </div>
+            </div>
+          </AnimateOnScroll>
+
+          {/* Skills Heatmap */}
+          <AnimateOnScroll animation="scale-in" delay={200}>
+            <div className={`relative transition-all duration-1000 mt-8 lg:mt-0 ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
+              <div className="bg-white/90 backdrop-blur-sm p-4 sm:p-6 lg:p-8 rounded-3xl shadow-2xl border border-emerald-100">
+                <SkillHeatmap />
               </div>
             </div>
           </AnimateOnScroll>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Optimized Scroll Indicator */}
       <AnimateOnScroll animation="bounce-in" delay={1000}>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group">
-          <div className="w-6 h-10 border-2 border-gray-400 rounded-full flex justify-center">
-            <div className="w-1 h-3 bg-gray-400 rounded-full mt-2 animate-pulse"></div>
-          </div>
+        <div className="absolute bottom-4 sm:bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer group">
+          <ChevronDown className="w-5 h-5 sm:w-6 sm:h-6 text-forest-600 group-hover:text-emerald-600 transition-colors duration-300" />
         </div>
       </AnimateOnScroll>
     </section>

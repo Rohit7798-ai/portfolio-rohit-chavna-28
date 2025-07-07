@@ -50,7 +50,7 @@ const TechStack = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gradient-to-br from-gray-50 to-slate-100 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-20 left-16 w-32 h-32 bg-gradient-to-r from-blue-300 to-purple-300 rounded-full opacity-10 animate-pulse"></div>
@@ -60,12 +60,14 @@ const TechStack = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-gray-900 mb-4">Technical Stack</h2>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Tools, languages, and frameworks I use to build data-driven solutions
-          </p>
-        </div>
+        <AnimateOnScroll animation="fade-in">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">Tech Stack & Expertise</h2>
+            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+              A comprehensive overview of the technologies and tools I use to build data-driven solutions
+            </p>
+          </div>
+        </AnimateOnScroll>
 
         {/* Tech Categories Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
