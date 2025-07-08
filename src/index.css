@@ -4,52 +4,6 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Custom Properties for theming */
-:root {
-  --background: 0 0% 100%;
-  --foreground: 222.2 84% 4.9%;
-  --card: 0 0% 100%;
-  --card-foreground: 222.2 84% 4.9%;
-  --popover: 0 0% 100%;
-  --popover-foreground: 222.2 84% 4.9%;
-  --primary: 142.1 76.2% 36.3%;
-  --primary-foreground: 355.7 100% 97.3%;
-  --secondary: 210 40% 98%;
-  --secondary-foreground: 222.2 84% 4.9%;
-  --muted: 210 40% 96%;
-  --muted-foreground: 215.4 16.3% 46.9%;
-  --accent: 210 40% 96%;
-  --accent-foreground: 222.2 84% 4.9%;
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 214.3 31.8% 91.4%;
-  --input: 214.3 31.8% 91.4%;
-  --ring: 142.1 76.2% 36.3%;
-  --radius: 0.5rem;
-}
-
-.dark {
-  --background: 222.2 84% 4.9%;
-  --foreground: 210 40% 98%;
-  --card: 222.2 84% 4.9%;
-  --card-foreground: 210 40% 98%;
-  --popover: 222.2 84% 4.9%;
-  --popover-foreground: 210 40% 98%;
-  --primary: 142.1 70% 45.3%;
-  --primary-foreground: 144.9 80.4% 10%;
-  --secondary: 217.2 32.6% 17.5%;
-  --secondary-foreground: 210 40% 98%;
-  --muted: 217.2 32.6% 17.5%;
-  --muted-foreground: 215 20.2% 65.1%;
-  --accent: 217.2 32.6% 17.5%;
-  --accent-foreground: 210 40% 98%;
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  --border: 217.2 32.6% 17.5%;
-  --input: 217.2 32.6% 17.5%;
-  --ring: 142.4 71.8% 29.2%;
-}
-
 /* Performance optimizations */
 * {
   box-sizing: border-box;
@@ -59,7 +13,6 @@ html {
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  scroll-padding-top: 80px;
 }
 
 body {
@@ -67,16 +20,10 @@ body {
   margin: 0;
   padding: 0;
   line-height: 1.6;
+  color: #1f2937;
+  background-color: #ffffff;
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: transparent;
-  overscroll-behavior: none;
-}
-
-/* Mobile-first responsive design */
-@media (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
 }
 
 /* Optimize animations for performance */
@@ -111,36 +58,16 @@ img {
   max-width: 100%;
   height: auto;
   display: block;
-  image-rendering: -webkit-optimize-contrast;
+}
+
+/* Smooth scrolling improvements */
+html {
+  scroll-padding-top: 80px;
 }
 
 /* Performance-optimized gradients */
 .bg-gradient-to-br {
   background-attachment: local;
-}
-
-/* Critical CSS for above-the-fold content */
-.hero-section {
-  min-height: 100vh;
-  min-height: 100dvh; /* Dynamic viewport height for mobile */
-}
-
-/* Accessibility improvements */
-@media (hover: none) and (pointer: coarse) {
-  /* Touch device optimizations */
-  button, a, [role="button"] {
-    min-width: 44px;
-    min-height: 44px;
-  }
-}
-
-/* Focus styles for accessibility */
-button:focus-visible,
-a:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 2px solid hsl(var(--ring));
-  outline-offset: 2px;
 }
 
 /* Custom animations with hardware acceleration */
