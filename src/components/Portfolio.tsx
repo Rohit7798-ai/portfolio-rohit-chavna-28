@@ -1,95 +1,142 @@
-
-import React, { useState } from 'react';
-import AnimatedProjectCard from './AnimatedProjectCard';
-import AnimateOnScroll from './MicroInteractions';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Github, ExternalLink, Star } from 'lucide-react';
 
 const Portfolio = () => {
-  const [filter, setFilter] = useState('all');
-
   const projects = [
     {
-      id: 1,
-      title: 'AI-Powered Data Visualization Dashboard',
-      category: 'data-science',
-      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
-      description: 'A web-based dashboard that uses Python and AI to transform raw data into interactive visualizations',
-      technologies: ['Python', 'Pandas', 'Matplotlib', 'Streamlit'],
-      year: '2024',
-      github: 'github.com/RohitTips/ai-lumina-data-flow-git'
+      title: 'Sales Analytics Dashboard',
+      description: 'Interactive dashboard built with Python and Plotly for visualizing sales data trends and insights.',
+      image: '/lovable-uploads/188da912-8c4c-4048-bb19-0392fcaebb97.png',
+      technologies: ['Python', 'Plotly', 'Pandas', 'Streamlit'],
+      github: '#',
+      live: '#',
+      featured: true
     },
     {
-      id: 2,
-      title: 'Statistical Analysis Platform',
-      category: 'data-science',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-      description: 'Advanced statistical modeling platform using NumPy and Pandas for complex data analysis',
-      technologies: ['Python', 'NumPy', 'Pandas', 'Seaborn'],
-      year: '2024'
+      title: 'Machine Learning Classifier',
+      description: 'Customer churn prediction model using ensemble methods with 94% accuracy on test data.',
+      image: '/lovable-uploads/20137c00-9a0e-498f-954f-9f9160cf583d.png',
+      technologies: ['Python', 'Scikit-learn', 'XGBoost', 'Jupyter'],
+      github: '#',
+      live: '#',
+      featured: true
     },
     {
-      id: 3,
-      title: 'Machine Learning Research',
-      category: 'machine-learning',
-      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
-      description: 'Research project exploring machine learning algorithms for data pattern recognition',
-      technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'Jupyter'],
-      year: '2023'
+      title: 'Data Visualization Suite',
+      description: 'Collection of interactive charts and graphs for exploring complex datasets.',
+      image: '/lovable-uploads/676e3de8-ec80-499e-9d50-e7314b385906.png',
+      technologies: ['D3.js', 'React', 'TypeScript', 'Tailwind'],
+      github: '#',
+      live: '#',
+      featured: false
+    },
+    {
+      title: 'Statistical Analysis Tool',
+      description: 'Web application for performing statistical tests and generating comprehensive reports.',
+      image: '/lovable-uploads/73863ed7-f2ca-44a7-a160-8926273e66fc.png',
+      technologies: ['R', 'Shiny', 'ggplot2', 'dplyr'],
+      github: '#',
+      live: '#',
+      featured: false
     }
   ];
 
-  const categories = [
-    { id: 'all', label: 'All' },
-    { id: 'data-science', label: 'Data Science' },
-    { id: 'machine-learning', label: 'ML' },
-    { id: 'analytics', label: 'Analytics' }
-  ];
-
-  const filteredProjects = filter === 'all' 
-    ? projects 
-    : projects.filter(project => project.category === filter);
-
   return (
-    <section id="portfolio" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-sage-50 to-emerald-50">
+    <section id="projects" className="py-20 bg-white dark:bg-gray-900">
+      <div className="container mx-auto px-6">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-4xl lg:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+            Featured Projects
+          </h2>
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
+            A showcase of my data science and web development projects
+          </p>
+        </motion.div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Section Header */}
-        <AnimateOnScroll animation="fade-in">
-          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-forest-900 mb-3 sm:mb-4">Featured Projects</h2>
-            <p className="text-base sm:text-lg lg:text-xl text-forest-700 max-w-3xl mx-auto leading-relaxed">
-              A showcase of data science projects demonstrating expertise in Python, statistical modeling, and machine learning
-            </p>
-          </div>
-        </AnimateOnScroll>
+        <div className="grid lg:grid-cols-2 gap-8">
+          {projects.map((project, index) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              viewport={{ once: true }}
+              className="group bg-gray-50 dark:bg-gray-800 rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-300"
+            >
+              <div className="relative overflow-hidden">
+                {project.featured && (
+                  <div className="absolute top-4 left-4 z-10 bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-medium flex items-center gap-1">
+                    <Star size={14} />
+                    Featured
+                  </div>
+                )}
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </div>
 
-        {/* Enhanced Filter Buttons - Mobile Optimized */}
-        <AnimateOnScroll animation="slide-up" delay={200}>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8 sm:mb-12 px-2">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setFilter(category.id)}
-                className={`group px-4 sm:px-6 py-2 sm:py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 text-sm sm:text-base whitespace-nowrap ${
-                  filter === category.id
-                    ? 'bg-gradient-to-r from-emerald-500 to-teal-500 text-white shadow-lg'
-                    : 'bg-white/80 backdrop-blur-sm text-forest-700 hover:bg-emerald-100 border border-emerald-200 hover:shadow-md'
-                }`}
-              >
-                <span className="group-hover:animate-pulse">{category.label}</span>
-              </button>
-            ))}
-          </div>
-        </AnimateOnScroll>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                  {project.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-4">
+                  {project.description}
+                </p>
 
-        {/* Enhanced Projects Grid with Animated Cards - Mobile Responsive */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8 sm:mb-12">
-          {filteredProjects.map((project, index) => (
-            <AnimateOnScroll key={project.id} animation="scale-in" delay={index * 100}>
-              <AnimatedProjectCard project={project} index={index} />
-            </AnimateOnScroll>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {project.technologies.map((tech) => (
+                    <span
+                      key={tech}
+                      className="px-3 py-1 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded-full text-sm font-medium"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex gap-4">
+                  <a
+                    href={project.github}
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                  >
+                    <Github size={18} />
+                    <span>Code</span>
+                  </a>
+                  <a
+                    href={project.live}
+                    className="flex items-center gap-2 text-gray-600 dark:text-gray-300 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+                  >
+                    <ExternalLink size={18} />
+                    <span>Live Demo</span>
+                  </a>
+                </div>
+              </div>
+            </motion.div>
           ))}
         </div>
 
+        {/* View More Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="text-center mt-12"
+        >
+          <button className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105">
+            View All Projects
+          </button>
+        </motion.div>
       </div>
     </section>
   );
