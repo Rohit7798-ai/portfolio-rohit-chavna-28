@@ -125,9 +125,7 @@ const Hero = React.memo(() => {
               
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-forest-900 mb-4 sm:mb-6 leading-tight">
                 <span className="block">Rohit P. Chavan </span>
-                <span className="block text-transparent bg-clip-text bg-gradient-to-r from-emerald-600 to-teal-600">
-                  Chavan
-                </span>
+                
               </h1>
               
               {/* Optimized typewriter designation */}
