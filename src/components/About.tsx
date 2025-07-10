@@ -86,7 +86,7 @@ const About = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-xl blur-lg opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
             
             <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-emerald-500 to-teal-500 text-white p-4 rounded-xl shadow-xl">
-              <div className="text-xl font-bold">BSc</div>
+              
               <div className="text-sm">Data Science</div>
             </div>
           </div>
