@@ -172,7 +172,7 @@ const Hero = React.memo(() => {
               {/* Optimized Social Links */}
               <AnimateOnScroll animation="fade-in" delay={700}>
                 <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 mb-3 sm:mb-4">
-                  <a href="mailto:chavanrohit2213@gmail.com" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-emerald-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl px-[16px] py-[15px] mx-0 my-0">
+                  <a href="mailto:chavanrohit2213@gmail.com" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-emerald-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
                     <Mail className="w-4 h-4 sm:w-6 sm:h-6" />
                   </a>
                   <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
@@ -185,26 +185,11 @@ const Hero = React.memo(() => {
               </AnimateOnScroll>
               
               {/* Social Labels */}
-              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500 mb-3">
-                <span className="mx-0">Email</span>
-                <span>LinkedIn</span>
-                <span className="my-0 mx-[9px]">GitHub</span>
+              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500">
+                <span className="px-3 sm:px-4">Email</span>
+                <span className="px-3 sm:px-4">LinkedIn</span>
+                <span className="px-3 sm:px-4">GitHub</span>
               </div>
-              
-              {/* Optimized Social Links */}
-              <AnimateOnScroll animation="fade-in" delay={700}>
-                <div className="flex justify-center lg:justify-start gap-3 sm:gap-4">
-                  <a href="mailto:chavanrohit2213@gmail.com" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-emerald-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl px-[16px] py-[15px] mx-0 my-0">
-                    <Mail className="w-4 h-4 sm:w-6 sm:h-6" />
-                  </a>
-                  <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-                    <Linkedin className="w-4 h-4 sm:w-6 sm:h-6" />
-                  </a>
-                  <a href="https://github.com/RohitTips" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-                    <Github className="w-4 h-4 sm:w-6 sm:h-6" />
-                  </a>
-                </div>
-              </AnimateOnScroll>
             </div>
           </AnimateOnScroll>
 
