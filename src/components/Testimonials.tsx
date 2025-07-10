@@ -58,30 +58,6 @@ const Testimonials = () => {
   const prevSlide = () => {
     setCurrentSlide(prev => (prev - 1 + testimonials.length) % testimonials.length);
   };
-  return <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          
-          
-        </div>
-
-        {/* Testimonials Carousel */}
-        
-
-        {/* Company Logos */}
-        <div>
-          <h3 className="text-2xl font-bold text-slate-900 text-center mb-8">Trusted by Amazing Companies</h3>
-          <div className="grid grid-cols-3 md:grid-cols-6 gap-8 items-center justify-items-center">
-            {companies.map((company, index) => <div key={index} className="text-center group cursor-pointer">
-                <div className="text-4xl md:text-5xl mb-2 group-hover:scale-110 transition-transform duration-200">
-                  {company.logo}
-                </div>
-                <div className="text-sm text-slate-600 font-medium">{company.name}</div>
-              </div>)}
-          </div>
-        </div>
-      </div>
-    </section>;
+  return;
 };
 export default Testimonials;
