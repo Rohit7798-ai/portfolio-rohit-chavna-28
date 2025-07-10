@@ -135,12 +135,12 @@ const Hero = React.memo(() => {
               
               {/* Enhanced Tagline */}
               <div className="text-base sm:text-lg md:text-xl text-emerald-600 font-semibold mb-3 sm:mb-4">
-                <span>"Solving real-world problems with code and creativity"</span>
+                <span>"Learning to solve problems through data and code"</span>
               </div>
               
               <p className="text-sm sm:text-base lg:text-lg text-forest-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-                Passionate about transforming data into actionable insights using Python, machine learning, and statistical modeling. 
-                Building innovative solutions with AI and data visualization.
+                Data Science student passionate about learning Python, machine learning, and statistical modeling. 
+                Building projects to develop skills in data analysis and visualization.
               </p>
 
               {/* Achievement Stats with optimized animations */}
