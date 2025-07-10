@@ -170,7 +170,11 @@ const StatsGlance = () => {
 
         {/* Call to Action */}
         <AnimateOnScroll animation="bounce-in" delay={600}>
-          
+          <div className="text-center mt-12">
+            <button className="bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg">
+              View All Projects
+            </button>
+          </div>
         </AnimateOnScroll>
       </div>
     </section>;

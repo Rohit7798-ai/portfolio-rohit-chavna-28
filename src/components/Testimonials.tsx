@@ -58,6 +58,74 @@ const Testimonials = () => {
   const prevSlide = () => {
     setCurrentSlide(prev => (prev - 1 + testimonials.length) % testimonials.length);
   };
-  return;
+  return (
+    <section className="py-20 bg-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-4">What Clients Say</h2>
+          <p className="text-xl text-slate-600">Testimonials from satisfied clients</p>
+        </div>
+        
+        <div className="relative">
+          <div className="overflow-hidden">
+            <div 
+              className="flex transition-transform duration-500 ease-in-out"
+              style={{ transform: `translateX(-${currentSlide * 100}%)` }}
+            >
+              {testimonials.map((testimonial) => (
+                <div key={testimonial.id} className="w-full flex-shrink-0 px-4">
+                  <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 max-w-4xl mx-auto">
+                    <div className="flex items-center mb-6">
+                      <img 
+                        src={testimonial.image} 
+                        alt={testimonial.name}
+                        className="w-16 h-16 rounded-full object-cover mr-4"
+                      />
+                      <div>
+                        <h3 className="font-semibold text-lg text-slate-900">{testimonial.name}</h3>
+                        <p className="text-slate-600">{testimonial.position}</p>
+                      </div>
+                    </div>
+                    <p className="text-slate-700 text-lg leading-relaxed mb-4">"{testimonial.text}"</p>
+                    <div className="flex text-yellow-400">
+                      {[...Array(testimonial.rating)].map((_, i) => (
+                        <span key={i}>⭐</span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          
+          <button 
+            onClick={prevSlide}
+            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
+          >
+            <ChevronLeft className="w-6 h-6 text-slate-600" />
+          </button>
+          
+          <button 
+            onClick={nextSlide}
+            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white rounded-full p-3 shadow-lg hover:shadow-xl transition-all"
+          >
+            <ChevronRight className="w-6 h-6 text-slate-600" />
+          </button>
+        </div>
+        
+        <div className="flex justify-center mt-8 space-x-2">
+          {testimonials.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all ${
+                index === currentSlide ? 'bg-blue-600' : 'bg-gray-300'
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 export default Testimonials;

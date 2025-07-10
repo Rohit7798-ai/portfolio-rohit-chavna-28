@@ -186,9 +186,9 @@ const Hero = React.memo(() => {
               
               {/* Social Labels */}
               <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500">
-                <span className="mx-0">Email</span>
-                <span>LinkedIn</span>
-                <span className="my-0 mx-[9px]">GitHub</span>
+                <span className="px-3 sm:px-4">Email</span>
+                <span className="px-3 sm:px-4">LinkedIn</span>
+                <span className="px-3 sm:px-4">GitHub</span>
               </div>
             </div>
           </AnimateOnScroll>
