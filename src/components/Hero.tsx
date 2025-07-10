@@ -169,6 +169,13 @@ const Hero = React.memo(() => {
                 </div>
               </AnimateOnScroll>
               
+              {/* Social Labels */}
+              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500 mb-2">
+                <span className="px-3 sm:px-4">Email</span>
+                <span className="px-3 sm:px-4">LinkedIn</span>
+                <span className="px-3 sm:px-4">GitHub</span>
+              </div>
+              
               {/* Optimized Social Links */}
               <AnimateOnScroll animation="fade-in" delay={700}>
                 <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 mb-3 sm:mb-4">
@@ -183,13 +190,6 @@ const Hero = React.memo(() => {
                   </a>
                 </div>
               </AnimateOnScroll>
-              
-              {/* Social Labels */}
-              <div className="flex justify-center lg:justify-start gap-3 sm:gap-4 text-xs text-forest-500">
-                <span className="px-3 sm:px-4">Email</span>
-                <span className="px-3 sm:px-4">LinkedIn</span>
-                <span className="px-3 sm:px-4">GitHub</span>
-              </div>
             </div>
           </AnimateOnScroll>
 
