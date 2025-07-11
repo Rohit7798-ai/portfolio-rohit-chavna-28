@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useMemo, useCallback } from 'react';
-import { ChevronDown, Download, Mail, Linkedin, Github, Code, Database, BarChart3, Users, TrendingUp, Award } from 'lucide-react';
+import { ChevronDown, Download, Mail, Linkedin, Github, Feather, Code, Database, BarChart3, Users, TrendingUp, Award } from 'lucide-react';
 import SkillHeatmap from './SkillHeatmap';
 import AnimateOnScroll from './MicroInteractions';
 const Hero = React.memo(() => {
@@ -180,6 +180,9 @@ const Hero = React.memo(() => {
                   </a>
                   <a href="https://github.com/RohitTips" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
                     <Github className="w-4 h-4 sm:w-6 sm:h-6" />
+                  </a>
+                  <a href="https://medium.com/@chavanrohit" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+                    <Feather className="w-4 h-4 sm:w-6 sm:h-6" />
                   </a>
                 </div>
               </AnimateOnScroll>
