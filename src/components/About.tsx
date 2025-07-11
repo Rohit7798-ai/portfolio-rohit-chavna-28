@@ -116,20 +116,7 @@ const About = () => {
             </div>
             
             {/* Skills */}
-            <div className="space-y-3">
-              <h4 className="text-lg font-semibold text-forest-900">Technical Skills</h4>
-              {skills.map(skill => <div key={skill.name} className="group">
-                  <div className="flex justify-between mb-1">
-                    <span className="text-sm font-semibold text-forest-800">{skill.name}</span>
-                    <span className="text-sm text-forest-600 font-medium">{skill.level}%</span>
-                  </div>
-                  <div className="w-full bg-emerald-100 rounded-full h-2 overflow-hidden">
-                    <div className="bg-gradient-to-r from-emerald-500 to-teal-500 h-2 rounded-full transition-all duration-1000 ease-out transform group-hover:scale-105" style={{
-                  width: `${skill.level}%`
-                }}></div>
-                  </div>
-                </div>)}
-            </div>
+            
             
             <button className="bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-xl hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 font-semibold">
               Download Resume
