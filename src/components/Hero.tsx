@@ -183,7 +183,7 @@ const Hero = React.memo(() => {
                     <Github className="w-4 h-4 sm:w-6 sm:h-6" />
                   </a>
                   <a href="https://medium.com/@chavanrohit" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
-                    <img src={mediumIcon} alt="Medium" className="w-4 h-4 sm:w-6 sm:h-6" />
+                    <img src={mediumIcon} alt="Medium" className="w-4 h-4 sm:w-6 sm:h-6 opacity-70 group-hover:opacity-100 filter brightness-0 group-hover:brightness-100 transition-all duration-300" />
                   </a>
                 </div>
               </AnimateOnScroll>
