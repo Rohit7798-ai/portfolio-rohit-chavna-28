@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useState, useEffect } from 'react';
 import pythonIcon from '../assets/icons/python-icon.png';
 import pandasIcon from '../assets/icons/pandas-icon.png';
 import numpyIcon from '../assets/icons/numpy-icon.png';
@@ -16,175 +15,185 @@ const SkillHeatmap = () => {
     setMounted(true);
   }, []);
 
-  const skills = useMemo(() => [
+  const skills = [
     { 
       name: 'Python', 
       level: 95, 
       icon: pythonIcon, 
-      category: 'Programming', 
-      heat: 5,
-      description: 'Used for data analysis, ML models & web apps',
-      projects: '8+ projects'
+      category: 'python',
+      description: '5+ years writing Python scripts',
+      color: 'from-orange-500 to-teal-500'
     },
     { 
       name: 'Data Analysis', 
       level: 90, 
       icon: dataAnalysisIcon, 
-      category: 'Analytics', 
-      heat: 5,
-      description: 'Statistical analysis & data wrangling',
-      projects: '5+ projects'
+      category: 'analysis',
+      description: 'Statistical analysis & data insights',
+      color: 'from-emerald-500 to-cyan-500'
     },
     { 
       name: 'Pandas', 
       level: 90, 
       icon: pandasIcon, 
-      category: 'Libraries', 
-      heat: 5,
-      description: 'Data manipulation & cleaning expert',
-      projects: '7+ projects'
+      category: 'python',
+      description: 'Expert data manipulation & cleaning',
+      color: 'from-orange-500 to-teal-500'
     },
     { 
       name: 'NumPy', 
       level: 85, 
       icon: numpyIcon, 
-      category: 'Libraries', 
-      heat: 4,
+      category: 'libraries',
       description: 'Numerical computing & array operations',
-      projects: '6+ projects'
+      color: 'from-indigo-500 to-purple-500'
     },
     { 
       name: 'Machine Learning', 
       level: 80, 
       icon: machineLearningIcon, 
-      category: 'AI/ML', 
-      heat: 4,
+      category: 'ml',
       description: 'Supervised & unsupervised learning',
-      projects: '4+ models'
+      color: 'from-blue-500 to-blue-600'
     },
     { 
       name: 'Matplotlib', 
       level: 85, 
       icon: matplotlibIcon, 
-      category: 'Visualization', 
-      heat: 4,
+      category: 'libraries',
       description: 'Data visualization & plotting',
-      projects: '8+ dashboards'
+      color: 'from-indigo-500 to-purple-500'
     },
     { 
       name: 'Statistical Modeling', 
       level: 85, 
       icon: statisticsIcon, 
-      category: 'Statistics', 
-      heat: 4,
+      category: 'analysis',
       description: 'Hypothesis testing & predictive models',
-      projects: '3+ studies'
+      color: 'from-emerald-500 to-cyan-500'
     },
     { 
       name: 'Scikit-learn', 
       level: 75, 
       icon: sklearnIcon, 
-      category: 'AI/ML', 
-      heat: 3,
+      category: 'libraries',
       description: 'ML algorithms & model evaluation',
-      projects: '5+ models'
+      color: 'from-indigo-500 to-purple-500'
     }
-  ], []);
+  ];
 
-  const getHeatColor = useMemo(() => (heat: number) => {
-    const colors = {
-      1: 'bg-emerald-100 text-emerald-700 border-emerald-200',
-      2: 'bg-emerald-200 text-emerald-800 border-emerald-300',
-      3: 'bg-emerald-400 text-white border-emerald-500',
-      4: 'bg-emerald-600 text-white border-emerald-700',
-      5: 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white border-emerald-700'
-    };
-    return colors[heat as keyof typeof colors];
-  }, []);
+  const getStrokeColor = (category: string) => {
+    switch (category) {
+      case 'python':
+        return '#f97316'; // orange-500
+      case 'analysis':
+        return '#10b981'; // emerald-500
+      case 'libraries':
+        return '#6366f1'; // indigo-500
+      case 'ml':
+        return '#3b82f6'; // blue-500
+      default:
+        return '#6366f1';
+    }
+  };
 
-  const getFireEmojis = useMemo(() => (heat: number) => {
-    return '🔥'.repeat(heat);
-  }, []);
+  const getPercentageColor = (category: string) => {
+    switch (category) {
+      case 'python':
+        return 'text-orange-500';
+      case 'analysis':
+        return 'text-emerald-500';
+      case 'libraries':
+        return 'text-indigo-500';
+      case 'ml':
+        return 'text-blue-500';
+      default:
+        return 'text-indigo-500';
+    }
+  };
 
   return (
-    <div className="space-y-6">
-      <div className="text-center mb-6">
-        <h4 className="text-2xl font-bold text-forest-900 mb-2">Skills Heatmap</h4>
-        <p className="text-forest-600">Hover over skills to see expertise details</p>
-      </div>
+    <section className="py-16 bg-gray-50">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-4xl font-bold text-gray-900 mb-4">Skills Heatmap</h2>
+          <p className="text-lg text-gray-600">Hover over skills to see expertise details</p>
+        </div>
 
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-        {skills.map((skill, index) => {
-          const IconComponent = skill.icon;
-          return (
-            <div
-              key={skill.name}
-              className={`group relative p-4 rounded-xl border-2 hover:border-emerald-400 transition-all duration-300 cursor-pointer transform hover:scale-105 ${getHeatColor(skill.heat)} will-change-transform`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="flex flex-col items-center text-center space-y-2">
-                <img src={skill.icon} alt={skill.name} className="w-6 h-6 group-hover:scale-110 transition-transform duration-300" />
-                <div className="font-semibold text-sm">{skill.name}</div>
-                <div className="text-xs opacity-80">{skill.category}</div>
-                <div className="text-lg">{getFireEmojis(skill.heat)}</div>
-              </div>
+        <div className="grid grid-cols-4 gap-8 max-w-4xl mx-auto">
+          {skills.map((skill, index) => {
+            const circumference = 2 * Math.PI * 45; // radius of 45
+            const strokeDasharray = `${(skill.level / 100) * circumference} ${circumference}`;
+            
+            return (
+              <div
+                key={skill.name}
+                className="group relative flex flex-col items-center"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {/* Circular Skill Tile */}
+                <div className="relative w-24 h-24 mb-4">
+                  {/* Background Circle */}
+                  <div className="absolute inset-0 rounded-full bg-white shadow-lg hover:shadow-xl transition-shadow duration-300">
+                    <div className="absolute inset-3 rounded-full bg-gray-50 flex items-center justify-center">
+                      <img 
+                        src={skill.icon} 
+                        alt={skill.name} 
+                        className="w-8 h-8 group-hover:scale-110 transition-transform duration-300" 
+                      />
+                    </div>
+                  </div>
 
-              {/* Optimized Tooltip */}
-              <div className="absolute -top-20 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-4 py-3 rounded-lg text-xs opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20 w-48">
-                <div className="font-semibold mb-1">{skill.name}</div>
-                <div className="mb-1">Skill Level: {skill.level}%</div>
-                <div className="mb-1 text-emerald-300">{skill.description}</div>
-                <div className="text-gray-300">{skill.projects}</div>
-                <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
-              </div>
+                  {/* Progress Ring */}
+                  <svg className="absolute inset-0 w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                    {/* Background ring */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke="#e5e7eb"
+                      strokeWidth="4"
+                      fill="transparent"
+                    />
+                    {/* Progress ring */}
+                    <circle
+                      cx="50"
+                      cy="50"
+                      r="45"
+                      stroke={getStrokeColor(skill.category)}
+                      strokeWidth="4"
+                      fill="transparent"
+                      strokeDasharray={mounted ? strokeDasharray : `0 ${circumference}`}
+                      strokeLinecap="round"
+                      className="transition-all duration-1000 ease-out"
+                      style={{ 
+                        filter: 'drop-shadow(0 0 4px rgba(0,0,0,0.1))'
+                      }}
+                    />
+                  </svg>
+                </div>
 
-              {/* Optimized Progress Ring */}
-              <div className="absolute -top-2 -right-2 w-8 h-8">
-                <svg className="w-8 h-8 transform -rotate-90" viewBox="0 0 32 32">
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="14"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    fill="transparent"
-                    className="opacity-20"
-                  />
-                  <circle
-                    cx="16"
-                    cy="16"
-                    r="14"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    fill="transparent"
-                    strokeDasharray={`${(skill.level / 100) * 87.96} 87.96`}
-                    className="opacity-80 transition-all duration-1000"
-                    style={{ 
-                      strokeDashoffset: mounted ? 0 : 87.96,
-                      willChange: 'stroke-dashoffset'
-                    }}
-                  />
-                </svg>
-                <div className="absolute inset-0 flex items-center justify-center text-xs font-bold">
-                  {skill.level}
+                {/* Skill Name */}
+                <h3 className="font-bold text-gray-900 text-sm text-center mb-2 leading-tight">
+                  {skill.name}
+                </h3>
+
+                {/* Percentage */}
+                <div className={`font-semibold text-lg ${getPercentageColor(skill.category)}`}>
+                  {skill.level}%
+                </div>
+
+                {/* Hover Tooltip */}
+                <div className="absolute -top-16 left-1/2 transform -translate-x-1/2 bg-white text-gray-800 px-4 py-2 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-all duration-300 pointer-events-none z-20 shadow-lg border min-w-max">
+                  {skill.description}
+                  <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-white"></div>
                 </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-
-      {/* Optimized Legend */}
-      <div className="flex justify-center items-center gap-4 text-sm text-forest-600">
-        <span>Expertise Level:</span>
-        {[1, 2, 3, 4, 5].map((level) => (
-          <div key={level} className="flex items-center gap-1">
-            <div className={`w-4 h-4 rounded ${getHeatColor(level).split(' ')[0]}`}></div>
-            <span>{level === 1 ? 'Beginner' : level === 5 ? 'Expert' : ''}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+    </section>
   );
 };
 
