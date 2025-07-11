@@ -125,22 +125,72 @@ const About = () => {
           </div>
         </div>
 
-        {/* Timeline */}
+        {/* Education & Experience Timeline */}
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">Education & Experience Timeline</h3>
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-emerald-400 to-teal-400"></div>
-            {timeline.map((item, index) => <div key={index} className={`flex items-center mb-6 ${index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'}`}>
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-6 text-right' : 'pl-6'}`}>
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-                    <div className="text-emerald-600 font-bold text-base">{item.year}</div>
-                    <h4 className="text-lg font-semibold text-forest-900 mb-1">{item.title}</h4>
-                    <div className="text-forest-600 mb-2 font-semibold text-sm">{item.company}</div>
-                    <p className="text-forest-700 text-sm font-medium">{item.description}</p>
+          <h3 className="text-2xl font-bold text-forest-900 text-center mb-12">Education & Experience Timeline</h3>
+          <div className="relative bg-gradient-to-br from-mint-50 to-teal-50 rounded-3xl p-8 overflow-hidden">
+            {/* Curved roadmap path */}
+            <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="none">
+              <path
+                d="M 100 350 Q 200 200 400 250 Q 600 300 700 150"
+                stroke="url(#roadmapGradient)"
+                strokeWidth="4"
+                fill="none"
+                strokeDasharray="0"
+                className="drop-shadow-sm"
+              />
+              <defs>
+                <linearGradient id="roadmapGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#10b981" />
+                  <stop offset="50%" stopColor="#14b8a6" />
+                  <stop offset="100%" stopColor="#06b6d4" />
+                </linearGradient>
+              </defs>
+            </svg>
+
+            {/* Timeline cards */}
+            <div className="relative z-10 grid lg:grid-cols-3 gap-8 lg:gap-12">
+              {timeline.map((item, index) => {
+                const icons = ['🎓', '💼', '💻'];
+                const iconComponents = [
+                  <div key="grad" className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">🎓</div>,
+                  <div key="brief" className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">💼</div>,
+                  <div key="laptop" className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">💻</div>
+                ];
+                
+                return (
+                  <div 
+                    key={index} 
+                    className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-white/20 group"
+                    style={{
+                      marginTop: index === 1 ? '3rem' : index === 2 ? '1rem' : '0'
+                    }}
+                  >
+                    {/* Icon */}
+                    <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                      {iconComponents[index]}
+                    </div>
+                    
+                    {/* Year badge */}
+                    <div className="text-center mb-3">
+                      <span className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-4 py-1 rounded-full text-sm font-bold shadow-lg">
+                        {item.year}
+                      </span>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="text-center">
+                      <h4 className="text-xl font-bold text-forest-900 mb-2">{item.title}</h4>
+                      <div className="text-emerald-600 font-semibold text-sm mb-3">{item.company}</div>
+                      <p className="text-forest-700 text-sm leading-relaxed font-medium">{item.description}</p>
+                    </div>
+                    
+                    {/* Connecting dot */}
+                    <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full border-2 border-white shadow-lg opacity-80"></div>
                   </div>
-                </div>
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-5 h-5 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full border-3 border-white shadow-lg"></div>
-              </div>)}
+                );
+              })}
+            </div>
           </div>
         </div>
 
