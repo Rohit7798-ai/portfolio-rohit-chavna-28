@@ -9,9 +9,8 @@ const TechStack = () => {
       icon: '💻',
       color: 'from-blue-500 to-purple-600',
       skills: [
-        { name: 'Python', icon: '🐍', experience: '2+ years', proficiency: 95 },
-        { name: 'SQL', icon: '🗄️', experience: '1.5+ years', proficiency: 80 },
-        { name: 'R', icon: '📊', experience: '1+ year', proficiency: 70 }
+        { name: 'Python', icon: '🐍', proficiency: 95 },
+        { name: 'SQL', icon: '🗄️', proficiency: 80 }
       ]
     },
     {
@@ -19,10 +18,10 @@ const TechStack = () => {
       icon: '🤖',
       color: 'from-emerald-500 to-teal-600',
       skills: [
-        { name: 'Scikit-learn', icon: '🔬', experience: '1.5+ years', proficiency: 85 },
-        { name: 'Pandas', icon: '🐼', experience: '2+ years', proficiency: 90 },
-        { name: 'NumPy', icon: '🔢', experience: '2+ years', proficiency: 85 },
-        { name: 'TensorFlow', icon: '🧠', experience: '1+ year', proficiency: 75 }
+        { name: 'Scikit-learn', icon: '🔬', proficiency: 85 },
+        { name: 'Pandas', icon: '🐼', proficiency: 90 },
+        { name: 'NumPy', icon: '🔢', proficiency: 85 },
+        { name: 'TensorFlow', icon: '🧠', proficiency: 75 }
       ]
     },
     {
@@ -30,10 +29,10 @@ const TechStack = () => {
       icon: '📊',
       color: 'from-orange-500 to-red-600',
       skills: [
-        { name: 'Matplotlib', icon: '📈', experience: '2+ years', proficiency: 85 },
-        { name: 'Seaborn', icon: '🎨', experience: '1.5+ years', proficiency: 80 },
-        { name: 'Plotly', icon: '📉', experience: '1+ year', proficiency: 75 },
-        { name: 'Power BI', icon: '⚡', experience: '1+ year', proficiency: 70 }
+        { name: 'Matplotlib', icon: '📈', proficiency: 85 },
+        { name: 'Seaborn', icon: '🎨', proficiency: 80 },
+        { name: 'Plotly', icon: '📉', proficiency: 75 },
+        { name: 'Power BI', icon: '⚡', proficiency: 70 }
       ]
     },
     {
@@ -41,10 +40,10 @@ const TechStack = () => {
       icon: '🛠️',
       color: 'from-gray-600 to-gray-800',
       skills: [
-        { name: 'Jupyter', icon: '📓', experience: '2+ years', proficiency: 90 },
-        { name: 'Git', icon: '🔧', experience: '1.5+ years', proficiency: 80 },
-        { name: 'VS Code', icon: '💾', experience: '2+ years', proficiency: 85 },
-        { name: 'Streamlit', icon: '🚀', experience: '1+ year', proficiency: 75 }
+        { name: 'Jupyter', icon: '📓', proficiency: 90 },
+        { name: 'Git', icon: '🔧', proficiency: 80 },
+        { name: 'VS Code', icon: '💾', proficiency: 85 },
+        { name: 'Streamlit', icon: '🚀', proficiency: 75 }
       ]
     }
   ];
@@ -99,7 +98,6 @@ const TechStack = () => {
                         </span>
                         <div className="flex-1">
                           <div className="font-semibold text-slate-900">{skill.name}</div>
-                          <div className="text-xs text-slate-600">{skill.experience}</div>
                         </div>
                       </div>
 
@@ -116,7 +114,7 @@ const TechStack = () => {
 
                       {/* Hover tooltip */}
                       <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-gray-900 text-white px-3 py-1 rounded-lg text-xs opacity-0 group-hover/skill:opacity-100 transition-opacity duration-300 pointer-events-none z-10 whitespace-nowrap">
-                        {skill.experience} experience
+                        {skill.proficiency}% proficiency
                         <div className="absolute top-full left-1/2 transform -translate-x-1/2 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
                       </div>
                     </div>
