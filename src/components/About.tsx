@@ -211,17 +211,6 @@ const About = () => {
           </div>
         </div>
 
-        {/* Values & Approach */}
-        <div>
-          <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">My Approach</h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
-            {values.map((value, index) => <div key={index} className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-emerald-100 group">
-                <div className="text-3xl mb-3 transform group-hover:scale-110 transition-transform duration-300">{value.icon}</div>
-                <h4 className="text-lg font-semibold text-forest-900 mb-2">{value.title}</h4>
-                <p className="text-forest-700 text-sm font-medium">{value.description}</p>
-              </div>)}
-          </div>
-        </div>
       </div>
     </section>;
 };
