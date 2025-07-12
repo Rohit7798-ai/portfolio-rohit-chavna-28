@@ -7,7 +7,6 @@ import TechStack from '../components/TechStack';
 import StatsGlance from '../components/StatsGlance';
 import Portfolio from '../components/Portfolio';
 
-import Blog from '../components/Blog';
 import Contact from '../components/Contact';
 import Footer from '../components/Footer';
 import FloatingTechStack from '../components/FloatingTechStack';
@@ -21,8 +20,6 @@ const Index = () => {
       <TechStack />
       <StatsGlance />
       <Portfolio />
-      
-      <Blog />
       <Contact />
       <Footer />
       <FloatingTechStack />
