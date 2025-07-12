@@ -116,25 +116,25 @@ const StatsGlance = () => {
         {/* Main Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {stats.map((stat, index) => <AnimateOnScroll key={stat.label} animation="scale-in" delay={index * 100}>
-              <div className={`${stat.bgColor} rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group cursor-pointer border border-white/50`}>
-                <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${stat.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
+              <div className={`relative ${stat.bgColor} rounded-2xl p-8 text-center hover:shadow-lg transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 group cursor-pointer border border-white/50`}>
+                <div className={`inline-flex p-4 rounded-full bg-gradient-to-r ${stat.color} text-white mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg relative z-10`}>
                   <stat.icon className="w-8 h-8" />
                 </div>
                 
-                <div className="text-4xl font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-all duration-300">
+                <div className="text-4xl font-bold text-slate-900 mb-2 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-slate-900 group-hover:to-slate-600 transition-all duration-300 relative z-10">
                   {stat.number}
                 </div>
                 
-                <div className="text-lg font-semibold text-slate-800 mb-1">
+                <div className="text-lg font-semibold text-slate-800 mb-1 relative z-10">
                   {stat.label}
                 </div>
                 
-                <div className="text-sm text-slate-600">
+                <div className="text-sm text-slate-600 relative z-10">
                   {stat.description}
                 </div>
 
                 {/* Animated border */}
-                <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r ${stat.color} p-0.5`}>
+                <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-gradient-to-r ${stat.color} p-0.5 pointer-events-none`}>
                   <div className={`w-full h-full ${stat.bgColor} rounded-2xl`}></div>
                 </div>
               </div>
