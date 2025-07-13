@@ -179,7 +179,7 @@ const Hero = React.memo(() => {
                   <a href="https://www.linkedin.com/in/chavanrohittt" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
                     <Linkedin className="w-4 h-4 sm:w-6 sm:h-6" />
                   </a>
-                  <a href="https://github.com/RohitTips" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
+                  <a href="https://github.com/Rohit7798-ai" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
                     <Github className="w-4 h-4 sm:w-6 sm:h-6" />
                   </a>
                   <a href="https://medium.com/@chavanrohit" target="_blank" rel="noopener noreferrer" className="group p-3 sm:p-4 bg-white/80 backdrop-blur-sm rounded-full border border-emerald-200 text-forest-600 hover:text-white hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg hover:shadow-xl">
