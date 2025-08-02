@@ -25,7 +25,7 @@ const AnimatedProjectCard = ({ project, index }: AnimatedProjectCardProps) => {
         <img
           src={project.image}
           alt={project.title}
-          className="w-full h-48 object-cover group-hover:scale-95 transition-transform duration-300"
+          className="w-full h-48 object-contain bg-white group-hover:scale-105 transition-transform duration-300"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-forest-900/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         
