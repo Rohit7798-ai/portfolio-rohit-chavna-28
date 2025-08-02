@@ -25,24 +25,6 @@ const Portfolio = () => {
       technologies: ['Python', 'Pandas', 'Matplotlib', 'Streamlit'],
       year: '2024',
       github: 'github.com/RohitTips/ai-lumina-data-flow-git'
-    },
-    {
-      id: 3,
-      title: 'Statistical Analysis Assignment',
-      category: 'data-science',
-      image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
-      description: 'Academic assignment exploring statistical modeling concepts using NumPy and Pandas for data analysis coursework',
-      technologies: ['Python', 'NumPy', 'Pandas', 'Seaborn'],
-      year: '2024'
-    },
-    {
-      id: 4,
-      title: 'Machine Learning Study Project',
-      category: 'machine-learning',
-      image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
-      description: 'Self-directed learning project exploring ML algorithms and pattern recognition as part of data science studies',
-      technologies: ['Python', 'Scikit-learn', 'TensorFlow', 'Jupyter'],
-      year: '2023'
     }
   ];
 
