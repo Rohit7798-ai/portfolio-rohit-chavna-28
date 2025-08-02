@@ -9,6 +9,15 @@ const Portfolio = () => {
   const projects = [
     {
       id: 1,
+      title: 'Netflix Data Analysis Project',
+      category: 'data-science',
+      image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&h=400&fit=crop',
+      description: 'Comprehensive analysis of Netflix content dataset exploring content growth over time, popular genres and countries, movie vs TV show distribution, and key content contributors including US and India',
+      technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter'],
+      year: '2025'
+    },
+    {
+      id: 2,
       title: 'Data Visualization Dashboard - Course Project',
       category: 'data-science',
       image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop',
@@ -18,7 +27,7 @@ const Portfolio = () => {
       github: 'github.com/RohitTips/ai-lumina-data-flow-git'
     },
     {
-      id: 2,
+      id: 3,
       title: 'Statistical Analysis Assignment',
       category: 'data-science',
       image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop',
@@ -27,7 +36,7 @@ const Portfolio = () => {
       year: '2024'
     },
     {
-      id: 3,
+      id: 4,
       title: 'Machine Learning Study Project',
       category: 'machine-learning',
       image: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop',
