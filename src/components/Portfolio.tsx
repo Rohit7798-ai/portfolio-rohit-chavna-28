@@ -11,8 +11,8 @@ const Portfolio = () => {
       id: 1,
       title: 'Netflix Data Analysis Project',
       category: 'data-science',
-      image: 'https://images.unsplash.com/photo-1574375927938-d5a98e8ffe85?w=600&h=400&fit=crop',
-      description: 'Comprehensive analysis of Netflix content dataset exploring content growth over time, popular genres and countries, movie vs TV show distribution, and key content contributors including US and India',
+      image: '/lovable-uploads/1b1a06e0-9aff-45c7-a7e7-e9a02971cb69.png',
+      description: 'Netflix Data Analysis Project | Jun 2025 – Jul 2025. Analysis of Netflix content growth over time, popular genres and countries, clear dominance of Movies over TV Shows, and key content contributors (e.g., US, India)',
       technologies: ['Python', 'Pandas', 'Matplotlib', 'Seaborn', 'Jupyter'],
       year: '2025'
     },
