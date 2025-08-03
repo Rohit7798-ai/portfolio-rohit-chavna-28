@@ -43,6 +43,15 @@ const Portfolio = () => {
       description: 'Higher risk and larger position sizes during Fear days. Sell-side trades dominate during Extreme Greed. Volatility increases profitability spread during emotional market conditions',
       technologies: ['Python', 'Pandas', 'Financial Analysis', 'Sentiment Analysis'],
       year: '2024'
+    },
+    {
+      id: 5,
+      title: 'Titanic Survival Analysis',
+      category: 'data-science',
+      image: '/src/assets/titanic-survival-analysis.png',
+      description: 'Gender: Females had a much higher survival rate compared to males. Ticket Class: First and second-class passengers survived more often than those in third class. Embarkation Point: Passengers boarding at Southampton experienced the highest fatalities. Family Size: Having many siblings or spouses on board was linked to lower survival chances. Age & Fare: Younger passengers and those who paid fares above the median had better odds of survival.',
+      technologies: ['Python', 'Pandas', 'Data Analysis', 'Statistical Modeling'],
+      year: '2024'
     }
   ];
 
