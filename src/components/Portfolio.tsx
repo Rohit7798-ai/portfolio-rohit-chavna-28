@@ -2,6 +2,9 @@
 import React, { useState } from 'react';
 import AnimatedProjectCard from './AnimatedProjectCard';
 import AnimateOnScroll from './MicroInteractions';
+import studentPerformanceDashboard from '../assets/student-performance-dashboard.png';
+import bitcoinSentimentAnalysis from '../assets/bitcoin-sentiment-analysis.png';
+import titanicSurvivalAnalysis from '../assets/titanic-survival-analysis.png';
 
 const Portfolio = () => {
   const [filter, setFilter] = useState('all');
@@ -30,7 +33,7 @@ const Portfolio = () => {
       id: 3,
       title: 'Student Performance Analysis',
       category: 'data-science',
-      image: '/src/assets/student-performance-dashboard.png',
+      image: studentPerformanceDashboard,
       description: 'Students who completed the test preparation course scored significantly higher on average. Students with standard lunch performed better than those with free/reduced lunch. Female students tend to score higher in reading and writing. Strong correlation exists between reading and writing scores.',
       technologies: ['Python', 'Pandas', 'Matplotlib', 'Statistical Analysis'],
       year: '2024'
@@ -39,7 +42,7 @@ const Portfolio = () => {
       id: 4,
       title: 'Trader Behavior vs Bitcoin Market Sentiment',
       category: 'data-science',
-      image: '/src/assets/bitcoin-sentiment-analysis.png',
+      image: bitcoinSentimentAnalysis,
       description: 'Higher risk and larger position sizes during Fear days. Sell-side trades dominate during Extreme Greed. Volatility increases profitability spread during emotional market conditions',
       technologies: ['Python', 'Pandas', 'Financial Analysis', 'Sentiment Analysis'],
       year: '2024'
@@ -48,7 +51,7 @@ const Portfolio = () => {
       id: 5,
       title: 'Titanic Survival Analysis',
       category: 'data-science',
-      image: '/src/assets/titanic-survival-analysis.png',
+      image: titanicSurvivalAnalysis,
       description: 'Gender: Females had a much higher survival rate compared to males. Ticket Class: First and second-class passengers survived more often than those in third class. Embarkation Point: Passengers boarding at Southampton experienced the highest fatalities. Family Size: Having many siblings or spouses on board was linked to lower survival chances. Age & Fare: Younger passengers and those who paid fares above the median had better odds of survival.',
       technologies: ['Python', 'Pandas', 'Data Analysis', 'Statistical Modeling'],
       year: '2024'
