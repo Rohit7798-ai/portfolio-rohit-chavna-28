@@ -64,7 +64,7 @@ const Portfolio = () => {
         {/* Section Header */}
         <AnimateOnScroll animation="fade-in">
           <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-forest-900 mb-3 sm:mb-4">Academic Projects</h2>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-forest-900 mb-3 sm:mb-4">Projects</h2>
             <p className="text-base sm:text-lg lg:text-xl text-forest-700 max-w-3xl mx-auto leading-relaxed">
               Student projects and coursework showcasing my learning journey in data science, Python programming, and statistical analysis
             </p>
