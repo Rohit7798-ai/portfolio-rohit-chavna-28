@@ -7,6 +7,7 @@ import bitcoinSentimentAnalysis from '../assets/bitcoin-sentiment-analysis.png';
 import titanicSurvivalAnalysis from '../assets/titanic-survival-analysis.png';
 
 const Portfolio = () => {
+  // Component for displaying academic projects without filtering
 
   const projects = [
     {
