@@ -34,6 +34,15 @@ const Portfolio = () => {
       description: 'Students who completed the test preparation course scored significantly higher on average. Students with standard lunch performed better than those with free/reduced lunch. Female students tend to score higher in reading and writing. Strong correlation exists between reading and writing scores.',
       technologies: ['Python', 'Pandas', 'Matplotlib', 'Statistical Analysis'],
       year: '2024'
+    },
+    {
+      id: 4,
+      title: 'Trader Behavior vs Bitcoin Market Sentiment',
+      category: 'data-science',
+      image: '/src/assets/bitcoin-sentiment-analysis.png',
+      description: 'Higher risk and larger position sizes during Fear days. Sell-side trades dominate during Extreme Greed. Volatility increases profitability spread during emotional market conditions',
+      technologies: ['Python', 'Pandas', 'Financial Analysis', 'Sentiment Analysis'],
+      year: '2024'
     }
   ];
 
