@@ -30,7 +30,7 @@ const Portfolio = () => {
       id: 3,
       title: 'Student Performance Analysis',
       category: 'data-science',
-      image: '/lovable-uploads/e9482172-95a5-4060-8bda-9855eba4936e.png',
+      image: '/src/assets/student-performance-dashboard.png',
       description: 'Students who completed the test preparation course scored significantly higher on average. Students with standard lunch performed better than those with free/reduced lunch. Female students tend to score higher in reading and writing. Strong correlation exists between reading and writing scores.',
       technologies: ['Python', 'Pandas', 'Matplotlib', 'Statistical Analysis'],
       year: '2024'
