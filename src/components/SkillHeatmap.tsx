@@ -21,7 +21,7 @@ const SkillHeatmap = () => {
       level: 95, 
       icon: pythonIcon, 
       category: 'python',
-      description: '5+ years writing Python scripts',
+      description: 'Writing Python scripts',
       color: 'from-orange-500 to-teal-500'
     },
     { 
