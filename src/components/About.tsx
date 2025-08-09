@@ -208,6 +208,33 @@ const About = () => {
               <h4 className="text-lg font-semibold text-forest-900 mb-2">MKCL Certified in Information Technology</h4>
               <p className="text-forest-700 text-sm font-medium">Comprehensive IT certification covering modern technologies and digital communication skills.</p>
             </div>
+
+            {/* Uploaded Certificates */}
+            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+              <img
+                src="/lovable-uploads/1a2a8169-37d1-4ec7-adaf-7d303df90df3.png"
+                alt="Kaggle Pandas certificate for Rohit Chavan"
+                loading="lazy"
+                className="w-full h-auto rounded-lg border border-emerald-100"
+              />
+              <div className="mt-3">
+                <h4 className="text-lg font-semibold text-forest-900 mb-1">Kaggle: Pandas</h4>
+                <p className="text-forest-700 text-sm font-medium">Certificate of Completion</p>
+              </div>
+            </div>
+
+            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+              <img
+                src="/lovable-uploads/91d1f640-f99c-412b-a484-8a376ab9ad24.png"
+                alt="Deloitte Data Analytics Job Simulation certificate for Rohit Chavan"
+                loading="lazy"
+                className="w-full h-auto rounded-lg border border-emerald-100"
+              />
+              <div className="mt-3">
+                <h4 className="text-lg font-semibold text-forest-900 mb-1">Deloitte: Data Analytics Job Simulation</h4>
+                <p className="text-forest-700 text-sm font-medium">Certificate of Completion</p>
+              </div>
+            </div>
           </div>
         </div>
 
