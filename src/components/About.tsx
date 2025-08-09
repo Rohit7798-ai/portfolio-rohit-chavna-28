@@ -225,7 +225,7 @@ const About = () => {
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
               <img
-                src="/lovable-uploads/91d1f640-f99c-412b-a484-8a376ab9ad24.png"
+                src="/lovable-uploads/97c2e73b-64d8-4c48-8966-0dad4b39046f.png"
                 alt="Deloitte Data Analytics Job Simulation certificate for Rohit Chavan"
                 loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
