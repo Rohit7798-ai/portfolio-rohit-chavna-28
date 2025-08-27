@@ -261,6 +261,19 @@ const About = () => {
                 <p className="text-forest-700 text-sm font-medium">Knowledge Lit Careers Certificate Course</p>
               </div>
             </div>
+
+            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+              <img
+                src="/lovable-uploads/18e43224-4f3c-4f3d-b078-7e960ffff96c.png"
+                alt="MKCL Maharashtra Olympiad Movement 2015 Standard 5 certificate for Chavan Rohit Prabhu"
+                loading="lazy"
+                className="w-full h-auto rounded-lg border border-emerald-100"
+              />
+              <div className="mt-3">
+                <h4 className="text-lg font-semibold text-forest-900 mb-1">Maharashtra Olympiad Movement 2015</h4>
+                <p className="text-forest-700 text-sm font-medium">Standard 5 Science Olympiad Participation Certificate</p>
+              </div>
+            </div>
           </div>
         </div>
 
