@@ -248,6 +248,19 @@ const About = () => {
                 <p className="text-forest-700 text-sm font-medium">Certificate of Completion</p>
               </div>
             </div>
+
+            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
+              <img
+                src="/lovable-uploads/02d315cf-bd78-4452-a30b-8dfdcf9c960e.png"
+                alt="MKCL Certificate in Python (KLIC Python) for Chavan Rohit Prabhu"
+                loading="lazy"
+                className="w-full h-auto rounded-lg border border-emerald-100"
+              />
+              <div className="mt-3">
+                <h4 className="text-lg font-semibold text-forest-900 mb-1">MKCL Certified Python Expert</h4>
+                <p className="text-forest-700 text-sm font-medium">Knowledge Lit Careers Certificate Course</p>
+              </div>
+            </div>
           </div>
         </div>
 
