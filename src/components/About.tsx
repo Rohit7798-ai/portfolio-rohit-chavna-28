@@ -131,14 +131,7 @@ const About = () => {
           <div className="relative bg-gradient-to-br from-mint-50 to-teal-50 rounded-3xl p-8 overflow-hidden">
             {/* Curved roadmap path */}
             <svg className="absolute inset-0 w-full h-full" viewBox="0 0 800 400" preserveAspectRatio="none">
-              <path
-                d="M 100 350 Q 200 200 400 250 Q 600 300 700 150"
-                stroke="url(#roadmapGradient)"
-                strokeWidth="4"
-                fill="none"
-                strokeDasharray="0"
-                className="drop-shadow-sm"
-              />
+              <path d="M 100 350 Q 200 200 400 250 Q 600 300 700 150" stroke="url(#roadmapGradient)" strokeWidth="4" fill="none" strokeDasharray="0" className="drop-shadow-sm" />
               <defs>
                 <linearGradient id="roadmapGradient" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" stopColor="#10b981" />
@@ -151,21 +144,11 @@ const About = () => {
             {/* Timeline cards */}
             <div className="relative z-10 grid lg:grid-cols-3 gap-8 lg:gap-12">
               {timeline.map((item, index) => {
-                const icons = ['🎓', '💼', '💻'];
-                const iconComponents = [
-                  <div key="grad" className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">🎓</div>,
-                  <div key="brief" className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">💼</div>,
-                  <div key="laptop" className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">💻</div>
-                ];
-                
-                return (
-                  <div 
-                    key={index} 
-                    className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-white/20 group"
-                    style={{
-                      marginTop: index === 1 ? '3rem' : index === 2 ? '1rem' : '0'
-                    }}
-                  >
+              const icons = ['🎓', '💼', '💻'];
+              const iconComponents = [<div key="grad" className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">🎓</div>, <div key="brief" className="w-12 h-12 bg-gradient-to-br from-cyan-500 to-blue-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">💼</div>, <div key="laptop" className="w-12 h-12 bg-gradient-to-br from-indigo-500 to-purple-500 rounded-full flex items-center justify-center text-white text-2xl shadow-lg">💻</div>];
+              return <div key={index} className="bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border border-white/20 group" style={{
+                marginTop: index === 1 ? '3rem' : index === 2 ? '1rem' : '0'
+              }}>
                     {/* Icon */}
                     <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
                       {iconComponents[index]}
@@ -187,9 +170,8 @@ const About = () => {
                     
                     {/* Connecting dot */}
                     <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-full border-2 border-white shadow-lg opacity-80"></div>
-                  </div>
-                );
-              })}
+                  </div>;
+            })}
             </div>
           </div>
         </div>
@@ -198,25 +180,12 @@ const About = () => {
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">Certifications</h3>
           <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <div className="text-3xl mb-3">🐍</div>
-              <h4 className="text-lg font-semibold text-forest-900 mb-2">MKCL Certified in Python</h4>
-              <p className="text-forest-700 text-sm font-medium">Advanced Python programming certification covering data structures, algorithms, and application development.</p>
-            </div>
-            <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <div className="text-3xl mb-3">💻</div>
-              <h4 className="text-lg font-semibold text-forest-900 mb-2">MKCL Certified in Information Technology</h4>
-              <p className="text-forest-700 text-sm font-medium">Comprehensive IT certification covering modern technologies and digital communication skills.</p>
-            </div>
+            
+            
 
             {/* Uploaded Certificates */}
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
-                src="/lovable-uploads/1a2a8169-37d1-4ec7-adaf-7d303df90df3.png"
-                alt="Kaggle Pandas certificate for Rohit Chavan"
-                loading="lazy"
-                className="w-full h-auto rounded-lg border border-emerald-100"
-              />
+              <img src="/lovable-uploads/1a2a8169-37d1-4ec7-adaf-7d303df90df3.png" alt="Kaggle Pandas certificate for Rohit Chavan" loading="lazy" className="w-full h-auto rounded-lg border border-emerald-100" />
               <div className="mt-3">
                 <h4 className="text-lg font-semibold text-forest-900 mb-1">Kaggle: Pandas</h4>
                 <p className="text-forest-700 text-sm font-medium">Certificate of Completion</p>
@@ -224,12 +193,7 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
-                src="/lovable-uploads/97c2e73b-64d8-4c48-8966-0dad4b39046f.png"
-                alt="Deloitte Data Analytics Job Simulation certificate for Rohit Chavan"
-                loading="lazy"
-                className="w-full h-auto rounded-lg border border-emerald-100"
-              />
+              <img src="/lovable-uploads/97c2e73b-64d8-4c48-8966-0dad4b39046f.png" alt="Deloitte Data Analytics Job Simulation certificate for Rohit Chavan" loading="lazy" className="w-full h-auto rounded-lg border border-emerald-100" />
               <div className="mt-3">
                 <h4 className="text-lg font-semibold text-forest-900 mb-1">Deloitte: Data Analytics Job Simulation</h4>
                 <p className="text-forest-700 text-sm font-medium">Certificate of Completion</p>
@@ -237,12 +201,7 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
-                src="/lovable-uploads/ea446889-743c-4bf0-a5c0-5eb1f6d13945.png"
-                alt="Kaggle Intro to Machine Learning certificate for Rohit Chavan"
-                loading="lazy"
-                className="w-full h-auto rounded-lg border border-emerald-100"
-              />
+              <img src="/lovable-uploads/ea446889-743c-4bf0-a5c0-5eb1f6d13945.png" alt="Kaggle Intro to Machine Learning certificate for Rohit Chavan" loading="lazy" className="w-full h-auto rounded-lg border border-emerald-100" />
               <div className="mt-3">
                 <h4 className="text-lg font-semibold text-forest-900 mb-1">Kaggle: Intro to Machine Learning</h4>
                 <p className="text-forest-700 text-sm font-medium">Certificate of Completion</p>
@@ -250,12 +209,7 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
-                src="/lovable-uploads/02d315cf-bd78-4452-a30b-8dfdcf9c960e.png"
-                alt="MKCL Certificate in Python (KLIC Python) for Chavan Rohit Prabhu"
-                loading="lazy"
-                className="w-full h-auto rounded-lg border border-emerald-100"
-              />
+              <img src="/lovable-uploads/02d315cf-bd78-4452-a30b-8dfdcf9c960e.png" alt="MKCL Certificate in Python (KLIC Python) for Chavan Rohit Prabhu" loading="lazy" className="w-full h-auto rounded-lg border border-emerald-100" />
               <div className="mt-3">
                 <h4 className="text-lg font-semibold text-forest-900 mb-1">MKCL Certified Python Expert</h4>
                 <p className="text-forest-700 text-sm font-medium">Knowledge Lit Careers Certificate Course</p>
