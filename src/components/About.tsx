@@ -195,7 +195,7 @@ const About = () => {
         </div>
 
         {/* Certifications */}
-        <div className="mb-16">
+        <div>
           <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">Certifications</h3>
           <div className="grid md:grid-cols-2 gap-6">
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
