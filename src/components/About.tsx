@@ -89,7 +89,7 @@ const About = () => {
               <img
                 src={profilePicture}
                 alt="Rohit P. Chavan"
-                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-300"
+                className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-300"
               />
             </div>
           </div>
