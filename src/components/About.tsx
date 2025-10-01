@@ -128,8 +128,7 @@ const About = () => {
               href="/Rohit_Chavan_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              download="Rohit_Chavan_Resume.pdf"
-              className="bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-xl hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 flex items-center gap-2 transform hover:scale-105 font-semibold"
+              className="inline-flex bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-xl hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 items-center gap-2 transform hover:scale-105 font-semibold cursor-pointer"
             >
               Download Resume
               <span>📄</span>
