@@ -1,7 +1,7 @@
-
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import ThemeToggle from './ui/theme-toggle';
+import profilePicture from '../assets/profile-picture.png';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -60,7 +60,7 @@ const Header = () => {
                 {/* Profile Image - Responsive sizing */}
                 <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full overflow-hidden border-2 border-emerald-500 shadow-lg flex-shrink-0">
                   <img
-                    src="/lovable-uploads/7929d93d-c5a9-40fc-a2c1-0df9fd8b905a.png"
+                    src={profilePicture}
                     alt="Rohit P. Chavan"
                     className="w-full h-full object-cover"
                   />
