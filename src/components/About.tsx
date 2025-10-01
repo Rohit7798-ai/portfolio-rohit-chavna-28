@@ -1,4 +1,5 @@
 import React from 'react';
+import profilePicture from '../assets/profile-picture.png';
 const About = () => {
   const skills = [{
     name: 'Python Programming',
@@ -82,10 +83,15 @@ const About = () => {
 
         {/* Personal Story */}
         <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-xl blur-lg opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
-            
-            
+          <div className="relative group flex items-center justify-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full blur-2xl opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
+            <div className="relative">
+              <img
+                src={profilePicture}
+                alt="Rohit P. Chavan"
+                className="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-300"
+              />
+            </div>
           </div>
           
           <div className="space-y-5">
