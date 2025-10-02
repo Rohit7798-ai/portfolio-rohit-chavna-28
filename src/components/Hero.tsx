@@ -142,7 +142,7 @@ const Hero = React.memo(() => {
               </div>
               
               
-              <p className="text-sm sm:text-base lg:text-lg text-forest-700 font-medium mb-6 sm:mb-8 max-w-2xl leading-relaxed">
+              <p className="text-sm sm:text-base lg:text-lg text-forest-700 font-medium mb-6 sm:mb-8 max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                 Data Science student with hands-on experience in Python, machine learning, and statistical modeling. I enjoy turning data into insights through analysis and visualization, and I'm focused on building solutions that solve real-world problems.
               </p>
 
