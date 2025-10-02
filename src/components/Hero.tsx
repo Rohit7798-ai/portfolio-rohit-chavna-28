@@ -79,8 +79,7 @@ const Hero = React.memo(() => {
     });
   }, []);
   const handleDownloadResume = useCallback(() => {
-    // Add resume download logic here
-    console.log('Download resume clicked');
+    window.open('https://drive.google.com/file/d/1FONQIYx1KXaGOO-buNLnr0Ylbj1df74R/view?usp=drive_link', '_blank');
   }, []);
   return <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-sage-50 via-emerald-50 to-teal-50 pt-20 sm:pt-16 lg:pt-0">
       {/* Optimized Floating Particles Background */}
