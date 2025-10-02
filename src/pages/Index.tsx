@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import Hero from '../components/Hero';
 import About from '../components/About';
 import TechStack from '../components/TechStack';
-import StatsGlance from '../components/StatsGlance';
 import Portfolio from '../components/Portfolio';
 
 import Contact from '../components/Contact';
@@ -18,7 +17,6 @@ const Index = () => {
       <Hero />
       <About />
       <TechStack />
-      <StatsGlance />
       <Portfolio />
       <Contact />
       <Footer />
