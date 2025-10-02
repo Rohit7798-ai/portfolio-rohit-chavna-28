@@ -125,29 +125,6 @@ const TechStack = () => {
           ))}
         </div>
 
-        {/* Stats Summary */}
-        <AnimateOnScroll animation="bounce-in" delay={400}>
-          <div className="mt-16 text-center">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                <div className="text-3xl font-bold text-blue-600 mb-2">15+</div>
-                <div className="text-slate-600 font-medium">Technologies</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                <div className="text-3xl font-bold text-emerald-600 mb-2">2+</div>
-                <div className="text-slate-600 font-medium">Years Experience</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                <div className="text-3xl font-bold text-orange-600 mb-2">8+</div>
-                <div className="text-slate-600 font-medium">Projects Built</div>
-              </div>
-              <div className="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-200">
-                <div className="text-3xl font-bold text-purple-600 mb-2">5+</div>
-                <div className="text-slate-600 font-medium">ML Models</div>
-              </div>
-            </div>
-          </div>
-        </AnimateOnScroll>
       </div>
     </section>
   );
