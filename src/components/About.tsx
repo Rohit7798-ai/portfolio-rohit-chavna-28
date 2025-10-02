@@ -97,12 +97,7 @@ const About = () => {
           <div className="space-y-5">
             <h3 className="text-2xl font-bold text-forest-900">My Journey in Data Science</h3>
             <p className="text-base text-forest-700 leading-relaxed font-medium">
-              Currently pursuing BSc in Data Science at R.C. Patel Arts, Commerce and Science College in Shirpur, Maharashtra. 
-              I have developed strong expertise in Python programming, data analysis, and statistical modeling.
-            </p>
-            <p className="text-base text-forest-700 leading-relaxed font-medium">
-              My passion lies in solving real-world problems using AI and IT solutions. I'm a quick learner with 
-              a strong work ethic, certified in both Python and Information Technology, building a robust project portfolio.
+              I'm a Data Science student at R.C. Patel Arts, Commerce and Science College, Shirpur, building expertise in Python, data analysis, and statistical modeling. I enjoy transforming raw data into clear, actionable insights and developing AI-driven solutions to real-world problems. With certifications in Python and IT, along with a track record of hands-on projects, I aim to contribute wherever data and technology can make a difference.
             </p>
             
             {/* Contact Info */}
