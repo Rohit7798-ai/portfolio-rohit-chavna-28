@@ -138,10 +138,7 @@ const Hero = React.memo(() => {
                 <span>"Learning to solve problems through data and code"</span>
               </div>
               
-              <p className="text-sm sm:text-base lg:text-lg text-forest-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">
-                Data Science student passionate about learning Python, machine learning, and statistical modeling. 
-                Building projects to develop skills in data analysis and visualization.
-              </p>
+              <p className="text-sm sm:text-base lg:text-lg text-forest-600 mb-6 sm:mb-8 max-w-2xl leading-relaxed">Data Science student with hands-on experience in Python, machine learning, and statistical modeling. I enjoy turning data into insights through analysis and visualization, and I’m focused on building solutions that solve real-world problems.</p>
 
               {/* Achievement Stats with optimized animations */}
               <AnimateOnScroll animation="scale-in" delay={300}>
