@@ -169,3 +169,16 @@ html {
 .bg-mint-50 {
   background-color: #f0fdf9;
 }
+
+/* Content visibility for better rendering performance */
+.section-content {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 500px;
+}
+
+/* GPU acceleration utility */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

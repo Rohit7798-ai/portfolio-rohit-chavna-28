@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import profilePicture from '../assets/profile-picture.png';
 const About = () => {
   const skills = [{
@@ -56,18 +56,18 @@ const About = () => {
   return <section id="about" className="py-16 bg-gradient-to-br from-emerald-50 to-teal-50 relative overflow-hidden">
       {/* Floating 3D Elements */}
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-20 left-10 w-16 h-16 bg-emerald-300 rounded-full opacity-20 animate-bounce" style={{
+        <div className="absolute top-20 left-10 w-16 h-16 bg-emerald-300 rounded-full opacity-20 animate-bounce will-change-transform" style={{
         animationDelay: '0s',
         animationDuration: '3s'
       }}></div>
-        <div className="absolute top-40 right-20 w-12 h-12 bg-teal-400 rounded-lg opacity-30 animate-pulse" style={{
+        <div className="absolute top-40 right-20 w-12 h-12 bg-teal-400 rounded-lg opacity-30 animate-pulse will-change-opacity" style={{
         animationDelay: '1s'
       }}></div>
-        <div className="absolute bottom-32 left-1/4 w-20 h-8 bg-sage-300 rounded-full opacity-25 animate-bounce" style={{
+        <div className="absolute bottom-32 left-1/4 w-20 h-8 bg-sage-300 rounded-full opacity-25 animate-bounce will-change-transform" style={{
         animationDelay: '2s',
         animationDuration: '4s'
       }}></div>
-        <div className="absolute top-1/3 right-10 w-6 h-6 bg-forest-400 rotate-45 opacity-20 animate-spin" style={{
+        <div className="absolute top-1/3 right-10 w-6 h-6 bg-forest-400 rotate-45 opacity-20 animate-spin will-change-transform" style={{
         animationDuration: '8s'
       }}></div>
       </div>
@@ -89,7 +89,9 @@ const About = () => {
               <img
                 src={profilePicture}
                 alt="Rohit P. Chavan"
-                className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-300"
+                loading="eager"
+                fetchPriority="high"
+                className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] rounded-full object-cover border-4 border-white shadow-2xl transform group-hover:scale-105 transition-all duration-300 will-change-transform"
               />
             </div>
           </div>
@@ -117,13 +119,12 @@ const About = () => {
             </div>
             
             {/* Skills */}
-            
-            
+                   
             <a 
               href="/Rohit_Chavan_Resume.pdf" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-xl hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 items-center gap-2 transform hover:scale-105 font-semibold cursor-pointer"
+              className="inline-flex bg-gradient-to-r from-forest-700 to-emerald-700 text-white px-6 py-3 rounded-xl hover:from-forest-800 hover:to-emerald-800 transition-all duration-300 items-center gap-2 transform hover:scale-105 will-change-transform font-semibold cursor-pointer"
             >
               Download Resume
               <span>📄</span>
@@ -173,7 +174,7 @@ const About = () => {
                     }}
                   >
                     {/* Icon */}
-                    <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300 will-change-transform">
                       {iconComponents[index]}
                     </div>
                     
@@ -287,4 +288,4 @@ const About = () => {
       </div>
     </section>;
 };
-export default About;
+export default memo(About);
