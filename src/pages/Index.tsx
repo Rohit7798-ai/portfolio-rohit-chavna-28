@@ -1,4 +1,4 @@
-import React, { lazy, Suspense } from 'react';
+import React, { lazy, Suspense, memo } from 'react';
 import Header from '../components/Header';
 import Hero from '../components/Hero';
 
@@ -10,17 +10,35 @@ const Contact = lazy(() => import('../components/Contact'));
 const Footer = lazy(() => import('../components/Footer'));
 const FloatingTechStack = lazy(() => import('../components/FloatingTechStack'));
 
+// Loading fallback component
+const LoadingFallback = memo(() => (
+  <div className="min-h-[200px] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-forest-600"></div>
+  </div>
+));
+LoadingFallback.displayName = 'LoadingFallback';
+
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Header />
       <Hero />
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="animate-spin rounded-full h-12 w-12 border-b-2 border-forest-600"></div></div>}>
+      <Suspense fallback={<LoadingFallback />}>
         <About />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
         <TechStack />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
         <Portfolio />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
         <Contact />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
         <Footer />
+      </Suspense>
+      <Suspense fallback={<LoadingFallback />}>
         <FloatingTechStack />
       </Suspense>
     </div>

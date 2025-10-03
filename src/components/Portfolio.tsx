@@ -1,12 +1,11 @@
-
-import React from 'react';
+import React, { memo } from 'react';
 import AnimatedProjectCard from './AnimatedProjectCard';
 import AnimateOnScroll from './MicroInteractions';
 import studentPerformanceDashboard from '../assets/student-performance-dashboard.png';
 import bitcoinSentimentAnalysis from '../assets/bitcoin-sentiment-analysis.png';
 import titanicSurvivalAnalysis from '../assets/titanic-survival-analysis.png';
 
-const Portfolio = () => {
+const Portfolio = memo(() => {
   // Component for displaying academic projects without filtering
 
   const projects = [
@@ -82,6 +81,7 @@ const Portfolio = () => {
       </div>
     </section>
   );
-};
+});
+Portfolio.displayName = 'Portfolio';
 
 export default Portfolio;

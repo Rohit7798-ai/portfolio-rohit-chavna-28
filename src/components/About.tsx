@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import profilePicture from '../assets/profile-picture.png';
+import LazyImage from './LazyImage';
 const About = () => {
   const skills = [{
     name: 'Python Programming',
@@ -86,7 +87,7 @@ const About = () => {
           <div className="relative group flex items-center justify-center">
             <div className="absolute inset-0 bg-gradient-to-r from-emerald-400 to-teal-400 rounded-full blur-2xl opacity-30 group-hover:opacity-40 transition-opacity duration-300"></div>
             <div className="relative">
-              <img
+              <LazyImage
                 src={profilePicture}
                 alt="Rohit P. Chavan"
                 loading="eager"
@@ -206,10 +207,9 @@ const About = () => {
           <h3 className="text-2xl font-bold text-forest-900 text-center mb-8">Certifications</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
+              <LazyImage
                 src="/lovable-uploads/1a2a8169-37d1-4ec7-adaf-7d303df90df3.png"
                 alt="Kaggle Pandas certificate for Rohit Chavan"
-                loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
               />
               <div className="mt-3">
@@ -219,10 +219,9 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
+              <LazyImage
                 src="/lovable-uploads/97c2e73b-64d8-4c48-8966-0dad4b39046f.png"
                 alt="Deloitte Data Analytics Job Simulation certificate for Rohit Chavan"
-                loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
               />
               <div className="mt-3">
@@ -232,10 +231,9 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
+              <LazyImage
                 src="/lovable-uploads/ea446889-743c-4bf0-a5c0-5eb1f6d13945.png"
                 alt="Kaggle Intro to Machine Learning certificate for Rohit Chavan"
-                loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
               />
               <div className="mt-3">
@@ -245,10 +243,9 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
+              <LazyImage
                 src="/lovable-uploads/02d315cf-bd78-4452-a30b-8dfdcf9c960e.png"
                 alt="MKCL Certificate in Python (KLIC Python) for Chavan Rohit Prabhu"
-                loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
               />
               <div className="mt-3">
@@ -258,10 +255,9 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
+              <LazyImage
                 src="/lovable-uploads/18e43224-4f3c-4f3d-b078-7e960ffff96c.png"
                 alt="MKCL Maharashtra Olympiad Movement 2015 Standard 5 certificate for Chavan Rohit Prabhu"
-                loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
               />
               <div className="mt-3">
@@ -271,10 +267,9 @@ const About = () => {
             </div>
 
             <div className="bg-white/70 backdrop-blur-sm p-5 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-emerald-100">
-              <img
+              <LazyImage
                 src="/lovable-uploads/collegetips-internship-offer-letter.jpg"
                 alt="CollegeTips.in Summer Internship Program 2025 Offer Letter for Rohit Chavan"
-                loading="lazy"
                 className="w-full h-auto rounded-lg border border-emerald-100"
               />
               <div className="mt-3">
