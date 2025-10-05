@@ -59,7 +59,7 @@ const Hero = React.memo(() => {
   
   const achievements = useMemo(() => [{
     icon: TrendingUp,
-    number: '3+',
+    number: '4+',
     label: 'Active Projects',
     description: 'Dashboard Solutions'
   }, {
