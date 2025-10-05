@@ -69,7 +69,7 @@ const Hero = React.memo(() => {
     description: 'ML Models'
   }, {
     icon: Award,
-    number: '2',
+    number: '4',
     label: 'Certifications',
     description: 'Python & IT'
   }], []);
