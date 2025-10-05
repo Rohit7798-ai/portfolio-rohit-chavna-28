@@ -22,12 +22,12 @@ const About = () => {
     level: 80
   }];
   const timeline = [{
-    year: '2025',
+    year: '2023',
     title: 'BSc Data Science Student',
     company: 'R.C. Patel Arts, Commerce and Science College, Shirpur',
     description: 'Hands-on experience in Python programming, data analysis, and statistical modeling.'
   }, {
-    year: '2023',
+    year: '2025',
     title: 'Intern - College Tips',
     company: 'Remote Internship',
     description: 'Engaged in online internship activities aimed at boosting creativity and social media strategies.'
